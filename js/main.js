@@ -94,6 +94,11 @@
     contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Enviando…';
@@ -108,7 +113,7 @@
 
         if (response.ok) {
           contactForm.reset();
-          showStatus('¡Mensaje enviado! Te contactaremos pronto.', 'success');
+          showStatus('¡Gracias! Tu mensaje ha sido enviado.', 'success');
         } else {
           const json = await response.json();
           const msg = (json.errors || []).map(e => e.message).join(', ') || 'Error al enviar el mensaje.';

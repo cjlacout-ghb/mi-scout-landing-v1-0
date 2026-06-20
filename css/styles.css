@@ -402,6 +402,13 @@ ul {
 }
 .nav-logo .mi  { color: #ffffff; }
 .nav-logo .scout { color: var(--accent); }
+.nav-logo .version { 
+  color: var(--text-muted); 
+  font-weight: 400; 
+  font-size: 14px; 
+  margin-left: 0.2rem;
+  letter-spacing: normal;
+}
 
 .nav-links {
   display: flex;
@@ -1149,6 +1156,13 @@ ul {
 }
 .footer-logo .mi    { color: #ffffff; }
 .footer-logo .scout { color: var(--accent); }
+.footer-logo .version {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: 0.2rem;
+  letter-spacing: normal;
+}
 
 .footer-copy {
   font-size: var(--fs-caption);

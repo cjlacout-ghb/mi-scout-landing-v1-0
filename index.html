@@ -6,14 +6,14 @@
 
   <!-- SEO -->
   <title>MiScout | Scouting Profesional de Pitcheo en Softbol</title>
-  <meta name="description" content="MiScout es la herramienta profesional definitiva para el scouting de pitcheo en softbol. Registrá cada lanzamiento, analizá zonas de strike y generá reportes de élite en tiempo real." />
+  <meta name="description" content="MiScout es la herramienta definitiva para tracking de pitcheos y zona de strike en softbol. Registrá cada lanzamiento, analizá zonas de strike y generá reportes de élite en tiempo real." />
   <meta name="keywords" content="MiScout, scouting softbol, pitcheo, zona de strike, heatmap, entrenador, scout, softbol profesional" />
   <meta name="author" content="Cristian J. Lacout" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:title"       content="MiScout | Scouting Profesional de Pitcheo en Softbol" />
-  <meta property="og:description" content="La herramienta profesional definitiva para el scouting de pitcheo en softbol. Decisiones basadas en datos reales." />
+  <meta property="og:description" content="La herramienta definitiva para tracking de pitcheos y zona de strike en softbol. Decisiones basadas en datos reales." />
   <meta property="og:image"       content="assets/images/app-screenshot.png" />
 
   <!-- Favicon -->
@@ -69,7 +69,7 @@
 
     <!-- Logo -->
     <a href="#" class="nav-logo" aria-label="MiScout inicio">
-      <span class="mi">Mi</span><span class="scout">Scout</span>
+      <span class="mi">Mi</span><span class="scout">Scout</span> <span class="version">v1.3</span>
     </a>
 
     <!-- Desktop links -->
@@ -130,8 +130,8 @@
 
     <!-- Subtitle -->
     <p class="hero-subtitle">
-      La herramienta profesional definitiva para el scouting de pitcheo en softbol.
-      Tomá decisiones basadas en datos reales y elevá el rendimiento de tu equipo.
+      La herramienta definitiva para tracking de pitcheos y zona de strike en softbol.
+      Tomá decisiones basadas en datos reales y elevá la eficiencia de tu equipo.
     </p>
 
     <!-- CTAs -->
@@ -583,15 +583,19 @@
           <ul class="pricing-features" role="list">
             <li class="pricing-feature-item">
               <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
-              Usuarios ilimitados por club
+              Acceso a 2 licencias por un año
             </li>
             <li class="pricing-feature-item">
               <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
-              Base de datos de por vida
+              Base de datos local ilimitada
             </li>
             <li class="pricing-feature-item">
               <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
-              Reportes individuales y de equipo
+              Reportes individuales y por equipo
+            </li>
+            <li class="pricing-feature-item">
+              <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
+              Prioridad de acceso a actualizaciones
             </li>
             <li class="pricing-feature-item">
               <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
@@ -601,10 +605,6 @@
               <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
               Soporte técnico prioritario
             </li>
-            <li class="pricing-feature-item">
-              <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
-              Actualizaciones garantizadas
-            </li>
           </ul>
 
           <a href="#contacto" class="btn btn-primary" style="width:100%; display:block; text-align:center;" id="pricing-cta">
@@ -612,7 +612,7 @@
           </a>
 
           <p class="pricing-note">
-            Próximamente: precios de lanzamiento y promociones especiales.
+            Promoción de lanzamiento, por tiempo limitado.
             Contactanos para ser de los primeros en acceder.
           </p>
         </div>
@@ -632,7 +632,7 @@
 
       <!-- Info -->
       <div>
-        <span class="section-eyebrow">Contacto</span>
+        <span class="section-eyebrow">SOLICITAR LICENCIA</span>
         <h2 class="reveal" id="contacto-title">
           <span style="font-family:var(--font-display);font-size:var(--fs-headline-lg);text-transform:uppercase;">
             ¿Listo para <span class="text-gold">Empezar?</span>
@@ -643,12 +643,12 @@
           o consultar el precio de lanzamiento para tu organización.
         </p>
 
-        <div class="contact-detail reveal">
+        <div class="contact-detail reveal" style="margin-top: 2rem;">
           <div class="contact-icon" aria-hidden="true">
             <span class="material-symbols-outlined">mail</span>
           </div>
-          <a href="mailto:contacto@miscout.app" class="contact-text" style="transition:color 0.2s ease;">
-            contacto@miscout.app
+          <a href="mailto:miscout.app@gmail.com" class="contact-text" style="transition:color 0.2s ease;">
+            miscout.app@gmail.com
           </a>
         </div>
 
@@ -673,11 +673,10 @@
         class="contact-form reveal"
         action="https://formspree.io/f/mwvjgrzb"
         method="POST"
-        novalidate
       >
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label" for="field-nombre">Nombre</label>
+            <label class="form-label" for="field-nombre">Nombre *</label>
             <input
               id="field-nombre"
               class="form-input"
@@ -689,51 +688,54 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-label" for="field-email">Email</label>
+            <label class="form-label" for="field-apellido">Apellido *</label>
             <input
-              id="field-email"
+              id="field-apellido"
               class="form-input"
-              type="email"
-              name="email"
-              autocomplete="email"
-              placeholder="tu@email.com"
+              type="text"
+              name="apellido"
+              autocomplete="family-name"
+              placeholder="Tu apellido"
               required
             />
           </div>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="field-pais">País</label>
-            <input
-              id="field-pais"
-              class="form-input"
-              type="text"
-              name="pais"
-              autocomplete="country-name"
-              placeholder="Argentina"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="field-rol">Rol</label>
-            <select id="field-rol" class="form-select form-input" name="rol">
-              <option value="" disabled selected>Seleccioná tu rol</option>
-              <option value="entrenador">Entrenador/a</option>
-              <option value="scout">Scout</option>
-              <option value="director">Director/a Deportivo/a</option>
-              <option value="otro">Otro</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label class="form-label" for="field-pais">País *</label>
+          <input
+            id="field-pais"
+            class="form-input"
+            type="text"
+            name="pais"
+            autocomplete="country-name"
+            placeholder="Argentina"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="field-club">Club / Organización</label>
+          <label class="form-label" for="field-club">Club / Organización *</label>
           <input
             id="field-club"
             class="form-input"
             type="text"
             name="club"
             placeholder="Nombre de tu club o equipo"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="field-email">Email *</label>
+          <input
+            id="field-email"
+            class="form-input"
+            type="email"
+            name="email"
+            autocomplete="email"
+            placeholder="tu@email.com"
+            required
           />
         </div>
 
@@ -744,9 +746,12 @@
             class="form-textarea"
             name="mensaje"
             placeholder="Contanos sobre tu equipo, tus necesidades o cualquier consulta..."
-            required
           ></textarea>
         </div>
+
+        <p class="form-note" style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">
+          (*) Los campos son obligatorios.
+        </p>
 
         <button type="submit" class="btn btn-primary" style="width:100%;" id="form-submit">
           Enviar Mensaje
@@ -768,7 +773,7 @@
 
     <div class="footer-brand">
       <a href="#" class="footer-logo" aria-label="MiScout inicio">
-        <span class="mi">Mi</span><span class="scout">Scout</span>
+        <span class="mi">Mi</span><span class="scout">Scout</span> <span class="version">v1.3</span>
       </a>
       <p class="footer-copy" style="margin-top:0.5rem;">
         © 2026 Cristian J. Lacout — Todos los derechos reservados.<br />
