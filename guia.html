@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiScout | Guia de Usuario</title>
+  <meta name="description" content="Guia completa de uso de MiScout." />
+  <meta name="author" content="Cristian J. Lacout" />
+  <link rel="icon" type="image/png" href="assets/images/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Bebas+Neue&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav class="nav" id="navbar" role="navigation" aria-label="Navegacion principal">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="MiScout inicio">
+      <span class="mi">Mi</span><span class="scout">Scout</span> <span class="version">v1.3</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a class="nav-link" href="index.html#que-es">Que es</a></li>
+      <li><a class="nav-link" href="index.html#funciones">Funciones</a></li>
+      <li><a class="nav-link" href="index.html#para-quien">Para quien</a></li>
+      <li><a class="nav-link nav-link--active" href="guia.html">Guia</a></li>
+      <li><a class="nav-link" href="index.html#precios">Precios</a></li>
+    </ul>
+    <a href="index.html#contacto" class="btn-nav">Solicitar licencia</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-mobile-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile-drawer" id="nav-mobile-drawer" role="menu">
+    <a href="index.html#que-es"    role="menuitem">Que es</a>
+    <a href="index.html#funciones" role="menuitem">Funciones</a>
+    <a href="index.html#para-quien" role="menuitem">Para quien</a>
+    <a href="guia.html"            role="menuitem">Guia de Usuario</a>
+    <a href="index.html#precios"   role="menuitem">Precios</a>
+    <a href="index.html#contacto"  role="menuitem">Testimoniales</a>
+    <a href="index.html#contacto" class="btn btn-primary" role="menuitem">Solicitar licencia</a>
+  </div>
+</nav>
+
+<main style="padding-top:110px;padding-bottom:80px;min-height:80vh;">
+  <div class="container">
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--text-muted);font-size:0.9rem;margin-bottom:2.5rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--primary-container)'" onmouseout="this.style.color='var(--text-muted)'">
+      <span class="material-symbols-outlined" style="font-size:1.1rem;">arrow_back</span>
+      Volver a la Landing Page
+    </a>
+    <article id="markdown-content" class="markdown-body">
+      <p style="color:var(--text-muted);">Cargando guia...</p>
+    </article>
+  </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo" aria-label="MiScout inicio">
+        <span class="mi">Mi</span><span class="scout">Scout</span> <span class="version">v1.3</span>
+      </a>
+      <p class="footer-copy" style="margin-top:0.5rem;">
+        &copy; 2026 Cristian J. Lacout &mdash; Todos los derechos reservados.<br />
+        Software propietario. Queda prohibida su copia o redistribucion sin autorizacion escrita del autor.
+      </p>
+    </div>
+    <nav class="footer-links" aria-label="Links del footer">
+      <a class="footer-link" href="#">Privacidad</a>
+      <a class="footer-link" href="#">Terminos</a>
+      <a class="footer-link" href="index.html#contacto">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="js/render-guia.js"></script>
+</body>
+</html>
