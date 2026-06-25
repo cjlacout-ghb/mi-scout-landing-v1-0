@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)file:///C:/Users/Usuario/Downloads/_Apps/Mi_Scout/Gu%C3%ADa%20de%20Usuario.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiScout v1.3 — Guía de Usuario</title>
+  <meta name="description" content="Guía de usuario completa de MiScout v1.3 — Softball Pitch Tracker.">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link href="./Guia_de_Usuario_files/css2" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base:       #0d0d1a;
+      --bg-card:       #13132a;
+      --bg-elevated:   #1a1a35;
+      --accent:        #FFD700;
+      --text-primary:  #f0f0f0;
+      --text-secondary:#9090b0;
+      --border:        #2a2a4a;
+      --success:       #4ade80;
+      --error:         #ef4444;
+      --info:          #60a5fa;
+      --display:       'Bebas Neue', sans-serif;
+      --body:          'Inter', sans-serif;
+      --radius:        10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--body);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,13,26,0.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+    }
+
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--text-primary); }
+    .nav-logo span { color: var(--accent); }
+    .nav-version { font-size: 0.7rem; color: var(--text-secondary); margin-left: 6px; font-weight: 400; }
+    .nav-back { font-size: 0.82rem; color: var(--text-secondary); transition: color 0.2s; }
+    .nav-back:hover { color: var(--accent); text-decoration: none; }
+
+    /* ── LAYOUT ── */
+    .layout {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 72px;
+    }
+
+    .sidebar-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .sidebar-nav a {
+      display: block;
+      padding: 7px 12px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      transition: background 0.15s, color 0.15s;
+      border-left: 2px solid transparent;
+    }
+
+    .sidebar-nav a:hover {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      text-decoration: none;
+      border-left-color: var(--accent);
+    }
+
+    /* ── CONTENT ── */
+    .content h1 {
+      font-family: var(--display);
+      font-size: 3rem;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .content h1 span { color: var(--accent); }
+
+    .doc-meta {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .content section {
+      margin-bottom: 56px;
+      scroll-margin-top: 80px;
+    }
+
+    .content h2 {
+      font-family: var(--display);
+      font-size: 1.8rem;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .content h2 .section-num {
+      font-family: var(--body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #0d0d1a;
+      padding: 2px 8px;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+    }
+
+    .content h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 24px 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .content p {
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+
+    .content ul, .content ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .content li {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      padding-left: 4px;
+    }
+
+    .content li strong { color: var(--text-primary); }
+
+    /* ── CALLOUT ── */
+    .callout {
+      border-left: 3px solid var(--accent);
+      background: var(--bg-elevated);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .callout.info { border-left-color: var(--info); }
+    .callout.success { border-left-color: var(--success); }
+    .callout.warning { border-left-color: #f59e0b; }
+
+    .callout strong { color: var(--text-primary); }
+
+    /* ── TABLE ── */
+    .table-wrap { overflow-x: auto; margin: 16px 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    thead th {
+      background: var(--bg-elevated);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: var(--bg-elevated); }
+
+    td strong { color: var(--text-primary); }
+
+    /* ── INSTALL GRID ── */
+    .install-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .install-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .install-card h4 {
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .install-card ol {
+      padding-left: 18px;
+    }
+
+    .install-card li {
+      font-size: 0.82rem;
+      margin-bottom: 5px;
+    }
+
+    /* ── COLOR BADGE ── */
+    .color-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── STATS ROW ── */
+    .stats-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+    }
+
+    .stat-chip {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: center;
+    }
+
+    .stat-chip span {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    /* ── FOOTER ── */
+    .doc-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      margin-top: 40px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .install-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo"><span>Mi</span>Scout <span class="nav-version">v1.3</span></div>
+      <a href="file:///C:/Users/Usuario/Downloads/miscout-landing.html" class="nav-back">← Volver al inicio</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-title">Contenido</div>
+      <ul class="sidebar-nav">
+        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#instalacion">1. Instalación</a></li>
+        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#activacion">2. Activación de licencia</a></li>
+        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#navegacion">3. Navegación</a></li>
+        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#lineup">4. Line-Up</a></li>
+        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#tracking">5. Tracking</a></li>
+        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#heatmap">6. Heat Map</a></li>
+        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#reporte">7. Reporte</a></li>
+        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#historial">8. Historial</a></li>
+        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#colores">9. Código de colores</a></li>
+        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#guardado">10. Guardado automático</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+      <h1><span>Mi</span>Scout</h1>
+      <div class="doc-meta">
+        Guía de Usuario · Versión 1.3 · Español (Argentina)<br>
+        La herramienta definitiva para tracking de pitcheos y zona de strike. Tomá decisiones basadas en datos reales y elevá la eficiencia de tu equipo.
+      </div>
+
+      <!-- 1. INSTALACIÓN -->
+      <section id="instalacion">
+        <h2><span class="section-num">01</span> Instalación</h2>
+        <p>MiScout es una aplicación web progresiva (PWA). No necesitás descargarla desde ninguna tienda — se instala directamente desde tu navegador.</p>
+
+        <div class="install-grid">
+          <div class="install-card">
+            <h4>iPhone / iPad (Safari)</h4>
+            <ol>
+              <li>Abrí MiScout en <strong>Safari</strong>.</li>
+              <li>Tocá <strong>Compartir</strong> (cuadrado con flecha, parte inferior).</li>
+              <li>Desplazate y seleccioná <strong>«Agregar a inicio»</strong>.</li>
+              <li>Tocá <strong>Agregar</strong> (esquina superior derecha).</li>
+              <li>¡Listo! El ícono aparece en tu pantalla de inicio.</li>
+            </ol>
+          </div>
+          <div class="install-card">
+            <h4>Android (Chrome)</h4>
+            <ol>
+              <li>Abrí MiScout en <strong>Google Chrome</strong>.</li>
+              <li>Tocá <strong>Menú</strong> (tres puntos, esquina superior derecha).</li>
+              <li>Seleccioná <strong>«Agregar a la pantalla principal»</strong>.</li>
+              <li>Confirmá tocando <strong>Agregar</strong> o <strong>«Instalar»</strong>.</li>
+              <li>¡Listo! La app aparece junto a tus otras apps.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ACTIVACIÓN -->
+      <section id="activacion">
+        <h2><span class="section-num">02</span> Activación de licencia</h2>
+        <p>La primera vez que abrís MiScout, la app verifica tu licencia antes de darte acceso.</p>
+        <ul>
+          <li>Verás la pantalla de <strong>Activar licencia</strong>.</li>
+          <li>Ingresá el código de activación (formato: <strong>MISCOUT-VXX-XXXX-XXXX</strong>).</li>
+          <li>La licencia quedará <strong>vinculada a ese dispositivo</strong> de forma permanente, por 1 año.</li>
+          <li>La app verifica la licencia con el servidor; necesitás internet <strong>solo en este paso</strong>.</li>
+          <li>Una vez activada, serás redirigido a la pantalla principal.</li>
+        </ul>
+        <div class="callout info">
+          <strong>📖 Nota:</strong> Podés acceder a esta guía en cualquier momento tocando el ícono de libro en la esquina superior derecha del encabezado.
+        </div>
+      </section>
+
+      <!-- 3. NAVEGACIÓN -->
+      <section id="navegacion">
+        <h2><span class="section-num">03</span> Navegación</h2>
+        <p>La app tiene 5 secciones accesibles desde la barra de navegación inferior:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Sección</th><th>Función</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Line-Up</strong></td><td>Gestionar el partido y las alineaciones</td></tr>
+              <tr><td><strong>Tracking</strong></td><td>Registrar lanzamientos en tiempo real</td></tr>
+              <tr><td><strong>Heat Map</strong></td><td>Ver estadísticas y mapa de calor</td></tr>
+              <tr><td><strong>Reporte</strong></td><td>Generar y descargar reportes</td></tr>
+              <tr><td><strong>Historial</strong></td><td>Consultar partidos finalizados</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 4. LINE-UP -->
+      <section id="lineup">
+        <h2><span class="section-num">04</span> Line-Up</h2>
+        <p>La sección Line-Up es el punto de partida. Aquí configurás el partido y armás las alineaciones.</p>
+
+        <h3>Iniciar un nuevo partido</h3>
+        <p>Tocá <strong>Comenzar</strong> en la pantalla principal. Campos disponibles:</p>
+        <ul>
+          <li><strong>Equipo Visitante</strong> (obligatorio): nombre o sigla (ej. AUS).</li>
+          <li><strong>Equipo Local</strong> (obligatorio): nombre o sigla (ej. ARG).</li>
+          <li><strong>Evento</strong> (opcional): descripción del evento (ej. Torneo X — Juego 1).</li>
+          <li><strong>Fecha</strong>: se completa automáticamente; podés cambiarla tocando el campo.</li>
+          <li><strong>Vista de zona de strike</strong>: perspectiva del Catcher o del Pitcher.</li>
+        </ul>
+
+        <h3>Gestionar el Lineup</h3>
+        <p>Verás dos pestañas: <strong>Visitante</strong> y <strong>Local</strong>. Tenés dos formas de cargar jugadores:</p>
+        <ul>
+          <li><strong>Agregar 1 jugador:</strong> abre un formulario individual. Al guardar, la app va al Tracking.</li>
+          <li><strong>Line-up completo:</strong> tabla para los 9 (o más) jugadores. Tocá «+ Agregar fila» si necesitás más.</li>
+        </ul>
+
+        <h3>Datos de cada jugador</h3>
+        <ul>
+          <li><strong># Camiseta</strong> (obligatorio): hasta 3 dígitos.</li>
+          <li><strong>Apellido</strong> (obligatorio).</li>
+          <li><strong>Nombre</strong> (opcional).</li>
+          <li><strong>Lado de bateo:</strong> D (Derecho), Z (Zurdo) o S (Switch / Ambos lados).</li>
+        </ul>
+
+        <h3>Modificar el Lineup</h3>
+        <ul>
+          <li><strong>Editar:</strong> tocá el ícono del lápiz junto al jugador.</li>
+          <li><strong>Eliminar:</strong> tocá la ✕ roja. Esta opción desaparece cuando el partido finaliza.</li>
+        </ul>
+
+        <h3>Sustituciones</h3>
+        <p>Tocá <strong>«Sustitución del bateador actual»</strong> (visible en Line-Up con un bateador activo). El saliente quedará tachado: <em>«■ Reemplazado por #X APELLIDO (Inning Y)»</em>. Si era abridor, aparece el botón <strong>«Reingresar»</strong>.</p>
+      </section>
+
+      <!-- 5. TRACKING -->
+      <section id="tracking">
+        <h2><span class="section-num">05</span> Tracking</h2>
+        <p>La sección Tracking es el corazón de la app. Aquí registrás cada lanzamiento en tiempo real.</p>
+
+        <h3>Encabezado del bateador actual</h3>
+        <ul>
+          <li>Número de camiseta (cuadro dorado), apellido, nombre e inicial del lado de bateo.</li>
+          <li>Equipo al que pertenece e inning actual (▲ alta / ▼ baja).</li>
+          <li>Controles <strong>+</strong> y <strong>−</strong> para avanzar o retroceder la mitad del inning.</li>
+          <li>Stats rápidas del partido si ya tiene turnos: AB, H, O, K, BB/HBP y resultado del último turno.</li>
+        </ul>
+
+        <div class="stats-row">
+          <div class="stat-chip">AB<span>Turnos al bate</span></div>
+          <div class="stat-chip">H<span>Hits</span></div>
+          <div class="stat-chip">O<span>Outs</span></div>
+          <div class="stat-chip">K<span>Ponches</span></div>
+          <div class="stat-chip">BB/HBP<span>Bases / Golpeado</span></div>
+        </div>
+
+        <h3>Modo «Este partido» vs. «Acumulado»</h3>
+        <ul>
+          <li><strong>Este partido:</strong> solo los lanzamientos del partido actual.</li>
+          <li><strong>Acumulado:</strong> todos los lanzamientos del jugador en partidos anteriores (solo cuando el partido está finalizado).</li>
+        </ul>
+
+        <h3>¿Cómo registrar un lanzamiento?</h3>
+        <ol>
+          <li><strong>Tocá la Zona:</strong> la zona está dividida en 8 sectores (1–4 internas, 5–8 perimetrales). Se registran las coordenadas exactas.</li>
+          <li><strong>Tipo de lanzamiento:</strong> Drop, Riser, Curva, Cambio, Screw u Otro.</li>
+          <li><strong>Resultado del turno al bate:</strong> OUT (tipo, defensor, calidad), KS, KL, HIT (tipo, ubicación, calidad), BB o HBP.</li>
+        </ol>
+        <p>Podés retroceder en el flujo tocando <strong>←</strong> en la esquina superior izquierda, o cancelar con <strong>✕</strong>.</p>
+
+        <h3>Confirmar y corregir</h3>
+        <ul>
+          <li><strong>Confirmar:</strong> avanza al siguiente bateador y guarda el turno.</li>
+          <li><strong>Editar:</strong> tocá un nuevo punto en la zona para corregir la ubicación antes de confirmar.</li>
+        </ul>
+
+        <h3>Otras funciones</h3>
+        <ul>
+          <li><strong>Cambio de mitad de inning:</strong> tocá ■ luego de los 3 outs para cambiar el equipo al bate.</li>
+          <li><strong>Seleccionar bateador diferente:</strong> tocá cualquier número en el carrusel de orden al bate.</li>
+          <li><strong>Historial de turnos:</strong> debajo de la zona verás todos los turnos del bateador actual (más reciente primero). Podés editar ✎ o eliminar ✕ cada uno.</li>
+          <li><strong>Notas del jugador:</strong> campo de texto libre para observaciones; se guardan automáticamente.</li>
+          <li><strong>Finalizar partido:</strong> tocá el botón rojo y confirmá. El partido se archiva, la zona pasa a solo lectura y se habilitan Reporte e Historial.</li>
+        </ul>
+      </section>
+
+      <!-- 6. HEAT MAP -->
+      <section id="heatmap">
+        <h2><span class="section-num">06</span> Heat Map</h2>
+
+        <h3>Selector de jugador</h3>
+        <p>Menú desplegable con todos los jugadores. Ordenable por <strong>Orden al bate</strong> o por <strong>AVG</strong> (promedio coloreado: verde = frío, rojo = caliente).</p>
+
+        <h3>Métricas del jugador</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>AB</th><th>H</th><th>A/F</th><th>KS/KL</th><th>BB/HBP</th><th>AVG</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Turnos al bate</td>
+                <td>Hits</td>
+                <td>Outs</td>
+                <td>Ponches</td>
+                <td>Bases por bolas y golpeados</td>
+                <td>Promedio de bateo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Mapa de calor</h3>
+        <p>Zona de strike desde la perspectiva del Catcher, cada sector coloreado según peligrosidad:</p>
+        <ul>
+          <li><span class="color-dot" style="background:#4ade80"></span><strong>Verde / Azul:</strong> zona fría — el bateador no conecta hits ahí.</li>
+          <li><span class="color-dot" style="background:#facc15"></span><strong>Amarillo:</strong> zona neutra.</li>
+          <li><span class="color-dot" style="background:#ef4444"></span><strong>Naranja / Rojo:</strong> zona caliente — el bateador es peligroso.</li>
+        </ul>
+
+        <h3>Desglose por zona</h3>
+        <p>Tabla con las 8 zonas (1–4 internas / 5–8 perimetrales) que muestra: Pitcheos, AB, Hits, A/F, K y AVG coloreado.</p>
+
+        <h3>Tabla por tipo de lanzamiento</h3>
+        <p>Rendimiento del bateador según tipo (Drop, Riser, Curva, Cambio, Screw, Otro): cuántos vio, cuántos terminaron en AB, K del pitcher y AVG contra ese lanzamiento. Solo aparecen tipos efectivamente registrados.</p>
+      </section>
+
+      <!-- 7. REPORTE -->
+      <section id="reporte">
+        <h2><span class="section-num">07</span> Reporte</h2>
+        <p>Los reportes solo están disponibles cuando el partido está <strong>finalizado</strong>.</p>
+
+        <h3>Tipos de reporte</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Tipo</th><th>Este partido</th><th>Acumulado</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Jugador individual</strong></td><td>✓</td><td>✓</td></tr>
+              <tr><td><strong>Equipo completo</strong></td><td>✓</td><td>✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Vista previa y descarga</h3>
+        <p>Antes de descargar verás una vista previa del contenido. Tocá <strong>«Descargar .md»</strong> para guardar el reporte como archivo Markdown. El nombre se genera automáticamente (ej. <code>scout_smith_m.md</code>).</p>
+      </section>
+
+      <!-- 8. HISTORIAL -->
+      <section id="historial">
+        <h2><span class="section-num">08</span> Historial</h2>
+        <p>Guarda todos los partidos finalizados. Cada tarjeta muestra: fecha, equipos, descripción del evento y cantidad de innings jugados.</p>
+        <ul>
+          <li><strong>Tocar una tarjeta:</strong> carga el partido y muestra sus estadísticas en Heat Map.</li>
+          <li><strong>Tocar «Seleccionar jugador»</strong> (botón dorado): carga el partido y muestra el Line-Up para navegar a stats de cualquier jugador.</li>
+          <li><strong>✕ Eliminar:</strong> solicita confirmación. Borra todos los datos permanentemente (no se puede deshacer).</li>
+        </ul>
+        <div class="callout warning">
+          <strong>⚠️ Atención:</strong> La eliminación de un partido es permanente e irreversible. No hay forma de recuperar los datos una vez eliminados.
+        </div>
+      </section>
+
+      <!-- 9. COLORES -->
+      <section id="colores">
+        <h2><span class="section-num">09</span> Código de colores</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Color</th><th>Significado</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="color-dot" style="background:#ef4444"></span><strong>Rojo</strong></td>
+                <td>HIT (éxito ofensivo)</td>
+              </tr>
+              <tr>
+                <td><span class="color-dot" style="background:#4ade80"></span><strong>Verde</strong></td>
+                <td>OUT / KS / KL (éxito defensivo)</td>
+              </tr>
+              <tr>
+                <td><span class="color-dot" style="background:#60a5fa"></span><strong>Azul</strong></td>
+                <td>BB / HBP (base por bolas o golpeado)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>En el mapa de calor la escala va de <strong>verde frío</strong> a <strong>rojo caliente</strong> (pasando por amarillo y naranja). En las tablas de AVG el color del número va de verde (promedio bajo) a rojo (promedio alto).</p>
+      </section>
+
+      <!-- 10. GUARDADO -->
+      <section id="guardado">
+        <h2><span class="section-num">10</span> Guardado automático</h2>
+        <p>MiScout guarda el progreso automáticamente en tu dispositivo, sin necesidad de conexión a internet durante el partido.</p>
+        <div class="callout success">
+          <strong>✅ Sin pérdida de datos:</strong> Si cerrás la app por accidente o el teléfono se queda sin batería, al volver a abrirla el partido continuará exactamente donde lo dejaste.
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <div class="doc-footer">
+        © 2026 Cristian J. Lacout — Todos los derechos reservados.<br>
+        MiScout es software propietario. Queda expresamente prohibida su copia, redistribución, modificación o uso comercial sin autorización escrita del autor.<br><br>
+        <em>MiScout es una herramienta de análisis estadístico. Su uso no garantiza resultados deportivos, victorias ni mejoras de rendimiento específicas.</em><br><br>
+        Versión 1.3 · Español (Argentina) · Última actualización: Junio 2026
+      </div>
+
+    </main>
+  </div>
+
+
+
+</body></html>
