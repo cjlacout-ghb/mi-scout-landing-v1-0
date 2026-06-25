@@ -3,7 +3,8 @@
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiScout v1.3 — Guía de Usuario</title>
+  <title>MiScout | Guía de usuario</title>
+  <link rel="icon" type="image/png" href="assets/images/icon-192.png" />
   <meta name="description" content="Guía de usuario completa de MiScout v1.3 — Softball Pitch Tracker.">
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link href="./Guia_de_Usuario_files/css2" rel="stylesheet">
@@ -335,7 +336,7 @@
   <nav>
     <div class="nav-inner">
       <div class="nav-logo"><span>Mi</span>Scout <span class="nav-version">v1.3</span></div>
-      <a href="file:///C:/Users/Usuario/Downloads/miscout-landing.html" class="nav-back">← Volver al inicio</a>
+      <a href="index.html" class="nav-back">← Salir de la guía</a>
     </div>
   </nav>
 
@@ -345,16 +346,16 @@
     <aside class="sidebar">
       <div class="sidebar-title">Contenido</div>
       <ul class="sidebar-nav">
-        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#instalacion">1. Instalación</a></li>
-        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#activacion">2. Activación de licencia</a></li>
-        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#navegacion">3. Navegación</a></li>
-        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#lineup">4. Line-Up</a></li>
-        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#tracking">5. Tracking</a></li>
-        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#heatmap">6. Heat Map</a></li>
-        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#reporte">7. Reporte</a></li>
-        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#historial">8. Historial</a></li>
-        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#colores">9. Código de colores</a></li>
-        <li><a href="file:///C:/Users/Usuario/Downloads/guia-de-usuario_1.html#guardado">10. Guardado automático</a></li>
+        <li><a href="#instalacion">1. Instalación</a></li>
+        <li><a href="#activacion">2. Activación de licencia</a></li>
+        <li><a href="#navegacion">3. Navegación</a></li>
+        <li><a href="#lineup">4. Line-Up</a></li>
+        <li><a href="#tracking">5. Tracking</a></li>
+        <li><a href="#heatmap">6. Heat Map</a></li>
+        <li><a href="#reporte">7. Reporte</a></li>
+        <li><a href="#historial">8. Historial</a></li>
+        <li><a href="#colores">9. Código de colores</a></li>
+        <li><a href="#guardado">10. Guardado automático</a></li>
       </ul>
     </aside>
 
@@ -648,5 +649,17 @@
   </div>
 
 
-
-</body></html>
+  <script>
+    document.querySelectorAll('.sidebar-nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
