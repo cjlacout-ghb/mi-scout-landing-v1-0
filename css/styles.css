@@ -770,7 +770,7 @@ ul {
 
 .who-img-wrap {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 414 / 896;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-subtle);
@@ -919,6 +919,7 @@ ul {
 }
 .guide-phone-screen img {
   width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -1236,7 +1237,7 @@ ul {
   .features-grid     { grid-template-columns: 1fr 1fr; }
 
   .who-grid          { grid-template-columns: 1fr; gap: 2.5rem; }
-  .who-img-wrap      { aspect-ratio: 16/9; }
+  .who-img-wrap      { aspect-ratio: 414 / 896; }
 
   .testimonials-grid { grid-template-columns: 1fr; }
 
