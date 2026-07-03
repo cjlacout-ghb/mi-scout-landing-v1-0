@@ -241,19 +241,21 @@
         </div>
         <h3 class="feature-title">Tracking preciso</h3>
         <p class="feature-desc">
-          Mapeo exacto de cada lanzamiento en la zona de strike de la pantalla durante el juego.
+          Interfaz optimizada para trackear el lanzamiento que define cada turno.
+          Registrá zona, tipo de pitcheo y resultado del turno, en segundos.
         </p>
+        <a href="assets/images/tracking_preciso.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
       <div class="feature-card reveal">
         <div class="feature-icon" aria-hidden="true">
           <span class="material-symbols-outlined">bolt</span>
         </div>
-        <h3 class="feature-title">Input en tiempo real</h3>
+        <h3 class="feature-title">Flujo de carga ágil</h3>
         <p class="feature-desc">
-          Interfaz optimizada para trackear -tiro a tiro- cada turno.
-          Registrá zona, tipo de pitcheo y resultado del turno, en segundos.
+          Cargá datos inning tras inning sin perder el hilo. <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> acompaña el partido de principio a fin, en tiempo real. Sin interrupciones.
         </p>
+        <a href="#" data-images="assets/images/flujo_1.PNG,assets/images/flujo_2.PNG,assets/images/flujo_3.PNG,assets/images/flujo_4.PNG,assets/images/flujo_5.PNG,assets/images/flujo_6.PNG,assets/images/flujo_7.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
       <div class="feature-card reveal">
@@ -262,9 +264,10 @@
         </div>
         <h3 class="feature-title">Analítica avanzada</h3>
         <p class="feature-desc">
-          Mapas de calor por bateador, conteo y situación de juego específica
+          Mapas de calor por bateador. Zonas frías y calientes
           para detectar tendencias y puntos débiles.
         </p>
+        <a href="assets/images/analitica.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
       <div class="feature-card reveal">
@@ -276,6 +279,7 @@
           Exportá informes detallados -individuales o por equipo- listos para evaluar con el cuerpo técnico
           o compartir con los jugadores.
         </p>
+        <a href="assets/images/reportes.png" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
       <div class="feature-card reveal">
@@ -286,6 +290,8 @@
         <p class="feature-desc">
           Base de datos permanente organizada. Estadísticas -individuales o por equipo-acumuladas, o separadas por partido.
         </p>
+        <a href="assets/images/historial_completo.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="#" id="btn-importante-historial" style="display:inline-block; margin-top:0.5rem; margin-left:0.75rem; padding: 0.2rem 0.6rem; background: #F5A623; color: #000; font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-decoration: none; letter-spacing: 0.05em;">⚠ IMPORTANTE</a>
       </div>
 
       <div class="feature-card reveal">
@@ -295,8 +301,9 @@
         <h3 class="feature-title">Sin conexión</h3>
         <p class="feature-desc">
           Funciona 100% offline durante el partido. Conectate solo para la
-          activación inicial; tus datos siempre están disponibles.
+          activación inicial. <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> siempre estará disponible en tu dispositivo.
         </p>
+        <a href="assets/images/sin_conexion.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
     </div>
@@ -801,6 +808,56 @@
      SCRIPTS
      ============================================================ -->
 <script src="js/main.js" defer></script>
+
+  <!-- Modal Celular -->
+  <div id="phone-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <button id="close-modal" class="modal-close">&times;</button>
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <img id="modal-img" src="" alt="Captura de pantalla">
+          <button id="prev-img" class="carousel-btn prev hidden">&#10094;</button>
+          <button id="next-img" class="carousel-btn next hidden">&#10095;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Información (Importante) -->
+  <div id="info-modal" class="modal-overlay hidden">
+    <div class="info-box">
+      <button id="close-info-modal" class="modal-close-icon">&times;</button>
+      <h2 class="info-title">¿Dónde se guardan tus datos?</h2>
+      
+      <div class="info-section">
+        <div class="info-section-header">
+          <span class="material-symbols-outlined text-gold">lock</span>
+          <h3>Tus datos viven en tu dispositivo</h3>
+        </div>
+        <p>
+          <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> no usa servidores externos para almacenar tu información. Todos los partidos, bateadores, turnos y estadísticas se guardan directamente en la memoria de tu celular o tablet — <strong class="text-white">sin nube, sin terceros, sin suscripciones de almacenamiento</strong>.
+        </p>
+        <p>Esto significa que tus datos de scouting son 100% privados y siempre accesibles, incluso sin conexión a internet.</p>
+      </div>
+
+      <div class="info-section warning-section">
+        <div class="info-section-header">
+          <span class="material-symbols-outlined text-error" style="color: #cc3333;">warning</span>
+          <h3>Importante: Cuidado al limpiar el navegador</h3>
+        </div>
+        <p>La información se guarda en dos lugares:</p>
+        <ul class="info-list">
+          <li><strong class="text-white">Tu licencia de activación:</strong> en la memoria local del navegador (localStorage).</li>
+          <li><strong class="text-white">Tus partidos e historial:</strong> en la base de datos local del dispositivo (IndexedDB).</li>
+        </ul>
+        <p>Si borrás únicamente el <em>caché del navegador</em>, tus datos están seguros. Pero si borrás <strong class="text-white">"cookies y datos de sitios"</strong> — o hacés un restablecimiento del navegador — perdés tanto la activación como todo el historial de partidos. <strong class="text-error" style="color: #cc3333;">Esta acción no tiene vuelta atrás.</strong></p>
+        <div class="highlight-box">
+          <strong class="text-gold">Recomendación:</strong> antes de limpiar el navegador, exportá tus reportes importantes desde la sección Reporte de la app.
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

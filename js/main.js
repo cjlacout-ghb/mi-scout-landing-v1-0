@@ -174,4 +174,116 @@
     counterEls.forEach(el => counterObserver.observe(el));
   }
 
+  // --- Modal Celular Logic (con carrusel) ---
+  const modal = document.getElementById('phone-modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeModalBtn = document.getElementById('close-modal');
+  const prevBtn = document.getElementById('prev-img');
+  const nextBtn = document.getElementById('next-img');
+  const featureLinks = document.querySelectorAll('.feature-card a');
+
+  let carouselImages = [];
+  let carouselIndex = 0;
+
+  const showCarouselButtons = (show) => {
+    if (show) {
+      prevBtn.classList.remove('hidden');
+      nextBtn.classList.remove('hidden');
+    } else {
+      prevBtn.classList.add('hidden');
+      nextBtn.classList.add('hidden');
+    }
+  };
+
+  const updateCarouselImg = () => {
+    modalImg.src = carouselImages[carouselIndex];
+  };
+
+  featureLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const dataImages = link.getAttribute('data-images');
+      const href = link.getAttribute('href');
+
+      if (dataImages) {
+        // Carrusel de múltiples imágenes
+        e.preventDefault();
+        carouselImages = dataImages.split(',');
+        carouselIndex = 0;
+        updateCarouselImg();
+        showCarouselButtons(carouselImages.length > 1);
+        modal.classList.remove('hidden');
+      } else if (href && href !== '#' && (href.endsWith('.png') || href.endsWith('.PNG') || href.endsWith('.jpg'))) {
+        // Imagen única
+        e.preventDefault();
+        carouselImages = [href];
+        carouselIndex = 0;
+        modalImg.src = href;
+        showCarouselButtons(false);
+        modal.classList.remove('hidden');
+      }
+    });
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      carouselIndex = (carouselIndex - 1 + carouselImages.length) % carouselImages.length;
+      updateCarouselImg();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      carouselIndex = (carouselIndex + 1) % carouselImages.length;
+      updateCarouselImg();
+    });
+  }
+
+  const closeModal = () => {
+    modal.classList.add('hidden');
+    modalImg.src = '';
+    carouselImages = [];
+    carouselIndex = 0;
+    showCarouselButtons(false);
+  };
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.classList.contains('modal-overlay')) {
+        closeModal();
+      }
+    });
+  }
+
+  // --- Info Modal Logic ---
+  const infoModal = document.getElementById('info-modal');
+  const btnImportante = document.getElementById('btn-importante-historial');
+  const closeInfoBtn = document.getElementById('close-info-modal');
+
+  const closeInfoModal = () => {
+    infoModal.classList.add('hidden');
+  };
+
+  if (btnImportante && infoModal) {
+    btnImportante.addEventListener('click', (e) => {
+      e.preventDefault();
+      infoModal.classList.remove('hidden');
+    });
+  }
+
+  if (closeInfoBtn) {
+    closeInfoBtn.addEventListener('click', closeInfoModal);
+  }
+
+  if (infoModal) {
+    infoModal.addEventListener('click', (e) => {
+      if (e.target === infoModal || e.target.classList.contains('modal-overlay')) {
+        closeInfoModal();
+      }
+    });
+  }
+
 })();
