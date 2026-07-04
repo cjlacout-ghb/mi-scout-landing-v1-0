@@ -571,7 +571,7 @@ ul {
   font-family: var(--font-display);
   font-size: 52px;
   line-height: 1;
-  color: var(--border-subtle);
+  color: #4ade80;
 }
 
 .hero-stat-label {
@@ -974,9 +974,25 @@ ul {
   background-color: var(--surface-container-low);
 }
 
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .pricing-card-wrap {
+  width: 100%;
   max-width: 440px;
   margin-inline: auto;
+  display: flex;
 }
 
 .pricing-card {
@@ -984,6 +1000,9 @@ ul {
   border: 2px solid var(--primary-container);
   border-radius: var(--radius-xl);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .pricing-header {
@@ -1002,6 +1021,10 @@ ul {
 .pricing-body {
   padding: 2.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .pricing-name {
@@ -1044,11 +1067,13 @@ ul {
   gap: 0.85rem;
   text-align: left;
   margin-bottom: 2rem;
+  flex-grow: 1;
+  width: 100%;
 }
 
 .pricing-feature-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   font-size: var(--fs-body-md);
   color: var(--on-surface);
@@ -1058,6 +1083,7 @@ ul {
   color: var(--status-success);
   flex-shrink: 0;
   font-size: 22px;
+  margin-top: 2px;
 }
 
 .pricing-note {
@@ -1218,7 +1244,7 @@ ul {
 /* ============================================================
    RESPONSIVE — TABLET & MOBILE
    ============================================================ */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .section { padding-block: var(--section-v-mobile); }
 
   .nav-links,

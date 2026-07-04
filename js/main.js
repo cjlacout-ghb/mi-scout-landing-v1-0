@@ -286,4 +286,36 @@
     });
   }
 
+  // --- Pre-fill message field based on pricing button clicked ---
+  const mensajeField = document.getElementById('field-mensaje');
+  const ctaLanzamiento = document.getElementById('pricing-cta-lanzamiento');
+  const ctaProfesional = document.getElementById('pricing-cta-profesional');
+
+  if (ctaLanzamiento && mensajeField) {
+    ctaLanzamiento.addEventListener('click', () => {
+      mensajeField.value = 'Quiero solicitar el Pack Lanzamiento (1 mes gratis).';
+    });
+  }
+
+  if (ctaProfesional && mensajeField) {
+    ctaProfesional.addEventListener('click', () => {
+      mensajeField.value = 'Quiero contratar el Pack Profesional.';
+    });
+  }
+
+  const navCtaDesktop = document.getElementById('nav-cta-desktop');
+  const navCtaMobile = document.getElementById('nav-cta-mobile');
+
+  if (navCtaDesktop && mensajeField) {
+    navCtaDesktop.addEventListener('click', () => {
+      mensajeField.value = 'Quiero contratar el Pack Profesional.';
+    });
+  }
+
+  if (navCtaMobile && mensajeField) {
+    navCtaMobile.addEventListener('click', () => {
+      mensajeField.value = 'Quiero contratar el Pack Profesional.';
+    });
+  }
+
 })();

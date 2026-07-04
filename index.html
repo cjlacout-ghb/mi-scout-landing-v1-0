@@ -77,11 +77,11 @@
       <li><a class="nav-link" href="#que-es">¿Qué es?</a></li>
       <li><a class="nav-link" href="#funciones">Funciones</a></li>
       <li><a class="nav-link" href="#para-quien">¿Para quién?</a></li>
-      <li><a class="nav-link" href="#guia">Guía de uso</a></li>
+      <li><a class="nav-link" href="#guia">Guía de usuario</a></li>
       <li><a class="nav-link" href="#precios">Precios</a></li>
     </ul>
 
-    <a href="#contacto" class="btn-nav">Solicitar licencia</a>
+    <a href="#contacto" class="btn-nav" id="nav-cta-desktop">QUIERO MI LICENCIA</a>
 
     <!-- Hamburger -->
     <button
@@ -103,7 +103,7 @@
     <a href="#guia"      role="menuitem">Guía de Usuario</a>
     <a href="#precios"   role="menuitem">Precios</a>
     <a href="#contacto"  role="menuitem">Testimoniales</a>
-    <a href="#contacto" class="btn btn-primary" role="menuitem">Solicitar licencia</a>
+    <a href="#contacto" class="btn btn-primary" role="menuitem" id="nav-cta-mobile">QUIERO MI LICENCIA</a>
   </div>
 </nav>
 
@@ -155,12 +155,12 @@
         <div class="hero-stat-label">Tipos de Pitcheos</div>
       </div>
       <div class="hero-stat reveal">
-        <div class="hero-stat-number" data-counter="100" data-suffix="%">100%</div>
-        <div class="hero-stat-label">Offline Ready</div>
+        <div class="hero-stat-number">MAPA DE CALOR</div>
+        <div class="hero-stat-label">De cada bateador</div>
       </div>
       <div class="hero-stat reveal">
-        <div class="hero-stat-number">SIN CLICKS</div>
-        <div class="hero-stat-label">Para instalar</div>
+        <div class="hero-stat-number" data-counter="99" data-suffix="%">99%</div>
+        <div class="hero-stat-label">Offline</div>
       </div>
     </div>
   </div>
@@ -279,7 +279,7 @@
           Exportá informes detallados -individuales o por equipo- listos para evaluar con el cuerpo técnico
           o compartir con los jugadores.
         </p>
-        <a href="assets/images/reportes.png" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="#" data-images="assets/images/reportes_1.PNG,assets/images/reportes_2.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
       <div class="feature-card reveal">
@@ -570,61 +570,103 @@
       </p>
     </div>
 
-    <div class="pricing-card-wrap reveal">
-      <div class="pricing-card gold-glow">
-
-        <!-- Header badge -->
-        <div class="pricing-header">
-          <span>⭐ MÁS POPULAR</span>
-        </div>
-
-        <!-- Body -->
-        <div class="pricing-body">
-          <h3 class="pricing-name">Pack Profesional</h3>
-
-          <div class="pricing-amount">
-            <span class="pricing-currency">USD</span>
-            <span class="pricing-number" data-counter="149" data-suffix="*">149*</span>
-            <span class="pricing-period">/año</span>
+    <div class="pricing-grid">
+      <!-- Pack Lanzamiento -->
+      <div class="pricing-card-wrap reveal">
+        <div class="pricing-card gold-glow">
+          <!-- Header badge -->
+          <div class="pricing-header">
+            <span>⭐ PROMOCIÓN POR TIEMPO LIMITADO</span>
           </div>
 
-          <ul class="pricing-features" role="list">
-            <li class="pricing-feature-item">
-              <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
-              Acceso a 1 licencia para 2 dispositivos
-            </li>
-            <li class="pricing-feature-item">
-              <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
-              Base de datos local ilimitada
-            </li>
-            <li class="pricing-feature-item">
-              <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
-              Reportes individuales y por equipo
-            </li>
-            <li class="pricing-feature-item">
-              <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
-              Prioridad de acceso a actualizaciones
-            </li>
-            <li class="pricing-feature-item">
-              <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
-              Funciona 100% sin conexión
-            </li>
-            <li class="pricing-feature-item">
-              <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
-              Soporte técnico prioritario
-            </li>
-          </ul>
+          <!-- Body -->
+          <div class="pricing-body">
+            <h3 class="pricing-name">Pack Lanzamiento</h3>
 
-          <a href="#contacto" class="btn btn-primary" style="width:100%; display:block; text-align:center;" id="pricing-cta">
-            Contratar ahora
-          </a>
+            <div style="margin-bottom: 0; line-height: 1;">
+              <span class="pricing-number" data-counter="1" style="font-size: 100px; position: relative; display: inline-block;">1<sup style="position: absolute; top: 0.1em; right: -1.5em; font-size: 0.2em; color: var(--text-muted);">(*)</sup></span>
+            </div>
+            <div style="text-align: center; font-size: 1rem; color: var(--text-muted, #737373); margin-top: -0.5rem; margin-bottom: 1.5rem;">mes gratis</div>
 
-          <p class="pricing-note">
-            (*) Promoción de lanzamiento. Tiempo y cantidad limitados.
-            Contactanos para ser uno de los primeros en acceder.
-          </p>
+            <ul class="pricing-features" role="list">
+              <li class="pricing-feature-item">
+                <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
+                Acceso a 1 licencia para 1 dispositivo
+              </li>
+              <li class="pricing-feature-item">
+                <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
+                Todas las funcionalidades del Pack Profesional
+              </li>
+            </ul>
+
+            <a href="#contacto" class="btn btn-primary" style="width:100%; display:block; text-align:center; font-size: 1.1rem;" id="pricing-cta-lanzamiento">
+              Solicitar ahora
+            </a>
+
+            <p class="pricing-note">
+              (*) Promoción de lanzamiento. Tiempo y cantidad limitados.
+              Contactanos para ser uno de los primeros en acceder.
+            </p>
+          </div>
         </div>
+      </div>
 
+      <!-- Pack Profesional -->
+      <div class="pricing-card-wrap reveal">
+        <div class="pricing-card gold-glow">
+          <!-- Header badge -->
+          <div class="pricing-header">
+            <span>⭐ MÁS POPULAR</span>
+          </div>
+
+          <!-- Body -->
+          <div class="pricing-body">
+            <h3 class="pricing-name">Pack Profesional</h3>
+
+            <div class="pricing-amount" style="margin-bottom: 0;">
+              <span class="pricing-currency">USD</span>
+              <span class="pricing-number" data-counter="8" style="font-size: 100px;">8</span>
+              <span class="pricing-period">/mes</span>
+            </div>
+            <div style="text-align: center; font-size: 1rem; color: var(--text-muted, #737373); margin-top: -0.5rem; margin-bottom: 1.5rem;">(*) pago anual</div>
+
+            <ul class="pricing-features" role="list">
+              <li class="pricing-feature-item">
+                <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
+                Acceso a 1 licencia para 1 dispositivo
+              </li>
+              <li class="pricing-feature-item">
+                <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
+                Base de datos local ilimitada
+              </li>
+              <li class="pricing-feature-item">
+                <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
+                Reportes individuales y por equipo
+              </li>
+              <li class="pricing-feature-item">
+                <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
+                Prioridad de acceso a actualizaciones
+              </li>
+              <li class="pricing-feature-item">
+                <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
+                Funciona 100% sin conexión
+              </li>
+              <li class="pricing-feature-item">
+                <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
+                Soporte técnico prioritario
+              </li>
+            </ul>
+
+            <a href="#contacto" class="btn btn-primary" style="width:100%; display:block; text-align:center; font-size: 1.1rem;" id="pricing-cta-profesional">
+              Contratar ahora
+            </a>
+
+            <p class="pricing-note" style="visibility: hidden;">
+              (*) Promoción de lanzamiento. Tiempo y cantidad limitados.
+              Contactanos para ser uno de los primeros en acceder.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -640,7 +682,7 @@
 
       <!-- Info -->
       <div>
-        <span class="section-eyebrow">SOLICITAR LICENCIA</span>
+        <span class="section-eyebrow">CONTACTO</span>
         <h2 class="reveal" id="contacto-title">
           <span style="font-family:var(--font-display);font-size:var(--fs-headline-lg);text-transform:uppercase;">
             ¿Listo para <span class="text-gold">Empezar?</span>
