@@ -477,6 +477,7 @@ ul {
 .nav-mobile-drawer .btn-primary {
   margin: 1rem 1.5rem 1.5rem;
   width: calc(100% - 3rem);
+  color: var(--surface);
 }
 
 /* ============================================================
@@ -1438,7 +1439,7 @@ ul {
 .phone-frame {
   width: 320px;
   height: 650px;
-  border: 6px solid #111;
+  border: 6px solid var(--surface-bright);
   border-radius: 32px;
   background: #000;
   position: relative;
@@ -1453,7 +1454,7 @@ ul {
   transform: translateX(-50%);
   width: 120px;
   height: 25px;
-  background: #111;
+  background: var(--surface-bright);
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   z-index: 10;
