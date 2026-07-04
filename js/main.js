@@ -318,4 +318,12 @@
     });
   }
 
+  const heroCtaPrimary = document.getElementById('hero-cta-primary');
+  
+  if (heroCtaPrimary && mensajeField) {
+    heroCtaPrimary.addEventListener('click', () => {
+      mensajeField.value = 'Quiero contratar el Pack Profesional.';
+    });
+  }
+
 })();
