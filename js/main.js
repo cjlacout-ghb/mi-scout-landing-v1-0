@@ -286,6 +286,34 @@
     });
   }
 
+  // --- PWA Modal Logic ---
+  const pwaModal = document.getElementById('pwa-modal');
+  const btnPwaInfo = document.getElementById('btn-pwa-info');
+  const closePwaBtn = document.getElementById('close-pwa-modal');
+
+  const closePwaModal = () => {
+    pwaModal.classList.add('hidden');
+  };
+
+  if (btnPwaInfo && pwaModal) {
+    btnPwaInfo.addEventListener('click', (e) => {
+      e.preventDefault();
+      pwaModal.classList.remove('hidden');
+    });
+  }
+
+  if (closePwaBtn) {
+    closePwaBtn.addEventListener('click', closePwaModal);
+  }
+
+  if (pwaModal) {
+    pwaModal.addEventListener('click', (e) => {
+      if (e.target === pwaModal || e.target.classList.contains('modal-overlay')) {
+        closePwaModal();
+      }
+    });
+  }
+
   // --- Pre-fill message field based on pricing button clicked ---
   const mensajeField = document.getElementById('field-mensaje');
   const ctaLanzamiento = document.getElementById('pricing-cta-lanzamiento');

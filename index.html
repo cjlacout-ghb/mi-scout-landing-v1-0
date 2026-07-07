@@ -75,7 +75,7 @@
     <!-- Desktop links -->
     <ul class="nav-links" role="list">
       <li><a class="nav-link" href="#que-es">¿Qué es?</a></li>
-      <li><a class="nav-link" href="#funciones">Funciones</a></li>
+      <li><a class="nav-link" href="#funciones" style="color: #F5A623; text-decoration: underline; text-underline-offset: 5px;">Funciones</a></li>
       <li><a class="nav-link" href="#para-quien">¿Para quién?</a></li>
       <li><a class="nav-link" href="#guia">Guía de usuario</a></li>
       <li><a class="nav-link" href="#precios">Precios</a></li>
@@ -98,7 +98,7 @@
   <!-- Mobile drawer -->
   <div class="nav-mobile-drawer" id="nav-mobile-drawer" role="menu">
     <a href="#que-es"    role="menuitem">¿Qué es?</a>
-    <a href="#funciones" role="menuitem">Funciones</a>
+    <a href="#funciones" role="menuitem" style="color: #F5A623; text-decoration: underline; text-underline-offset: 5px;">Funciones</a>
     <a href="#para-quien" role="menuitem">¿Para quién?</a>
     <a href="#guia"      role="menuitem">Guía de Usuario</a>
     <a href="#precios"   role="menuitem">Precios</a>
@@ -139,6 +139,9 @@
       <a href="#contacto" class="btn btn-secondary" id="hero-cta-primary">
         Solicitar licencia
       </a>
+      <a href="https://mi-scout-v1-3.vercel.app/" class="btn btn-secondary" id="hero-cta-download" target="_blank">
+        Descargar app
+      </a>
       <a href="#guia" class="btn btn-secondary" id="hero-cta-secondary">
         Ver guía de usuario
       </a>
@@ -172,33 +175,39 @@
      ============================================================ -->
 <section class="section what-is" id="que-es" aria-labelledby="que-es-title">
   <div class="container">
+    <div class="what-is-intro">
+      <span class="section-eyebrow">¿Qué es MiScout?</span>
+      <h2 class="section-title reveal" id="que-es-title">
+        Potenciá tu Análisis <span class="text-gold">Sin Límites</span>
+      </h2>
+      <p class="what-is-intro-text reveal">
+        Los cuerpos técnicos toman decisiones basadas en datos. Hasta ahora, no existía en el mundo del softbol una herramienta accesible para todos, que capture esa información valiosa. <br>
+        <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> cambia eso.
+      </p>
+    </div>
     <div class="what-is-grid">
 
       <!-- Copy -->
       <div>
-        <span class="section-eyebrow">¿Qué es MiScout?</span>
-        <h2 class="section-title reveal" id="que-es-title">
-          Potenciá tu Análisis <span class="text-gold">Sin Límites</span>
-        </h2>
         <div class="what-is-body reveal">
           <p>
-            <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> es una <span class="what-is-highlight">Progressive Web App (PWA)</span>
-            pensada para trabajar donde vos estés. Olvidate de las instalaciones complicadas;
-            accedé desde cualquier dispositivo que cuente con un navegador.
+            <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> te permite registrar cada lanzamiento con precisión - zona, tipo de pitcheo, resultado del turno - mientras el partido transcurre. Sin interrupciones. Sin perder el foco.
           </p>
           <p>
-            Diseñada específicamente para la dinámica del softbol actual, <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong>
-            permite a entrenadores y scouts registrar cada lanzamiento con precisión,
-            pudiendo generar reportes instantáneos que transforman la observación en estrategia pura.
+            <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> genera un mapa completo del bateador rival. Zonas calientes y frías. Las debilidades contra cada tipo de pitcheo. Los mapas de calor convierten partidos enteros en inteligencia táctica. Lo que antes tomaba horas construir con planillas y videos, ahora está listo al final de cada turno.
+          </p>
+          <p>
+            El pitcher que gana no es siempre el más rápido. Gana el que lanza en la ubicación correcta. <br>
+            <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> sabe exactamente cuál es ese lugar.
           </p>
         </div>
 
-        <div class="what-is-tag reveal">
+        <a href="#" id="btn-pwa-info" class="what-is-tag reveal" style="text-decoration: none;">
           <div class="what-is-tag-icon" aria-hidden="true">
             <span class="material-symbols-outlined">tablet_android</span>
           </div>
           <span class="what-is-tag-text">Optimizada para Dispositivos móviles</span>
-        </div>
+        </a>
       </div>
 
       <!-- Image mockup -->
@@ -901,5 +910,22 @@
     </div>
   </div>
 
+  <!-- Modal PWA -->
+  <div id="pwa-modal" class="modal-overlay hidden">
+    <div class="info-box">
+      <button id="close-pwa-modal" class="modal-close-icon">&times;</button>
+      <h2 class="info-title">App Optimizada</h2>
+      
+      <div class="info-section">
+        <div class="info-section-header">
+          <span class="material-symbols-outlined text-gold">tablet_android</span>
+          <h3>Progressive Web App</h3>
+        </div>
+        <p>
+          <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> es una Progressive Web App (PWA) pensada para trabajar desde donde vos estés. Olvidate de las instalaciones complicadas; accedé desde cualquier dispositivo que cuente con un navegador.
+        </p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

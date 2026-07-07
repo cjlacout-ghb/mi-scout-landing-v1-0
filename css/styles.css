@@ -620,17 +620,24 @@ ul {
 
 .what-is-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.3fr;
   gap: 4rem;
-  align-items: center;
+  align-items: start;
+}
+
+.what-is-intro {
+  margin-bottom: 3rem;
+  max-width: 100%;
+}
+
+.what-is-intro-text {
+  font-size: var(--fs-body-lg);
+  color: var(--on-surface-variant);
 }
 
 .what-is-body p {
   color: var(--on-surface-variant);
   margin-bottom: 1rem;
-  font-size: var(--fs-body-lg);
-}
-.what-is-body p:last-of-type {
   font-size: var(--fs-body-md);
 }
 
@@ -643,6 +650,11 @@ ul {
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
+  transition: opacity 0.2s ease;
+}
+
+a.what-is-tag:hover {
+  opacity: 0.8;
 }
 
 .what-is-tag-icon {
