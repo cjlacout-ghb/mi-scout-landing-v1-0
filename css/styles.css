@@ -635,11 +635,7 @@ ul {
   color: var(--on-surface-variant);
 }
 
-.what-is-body p {
-  color: var(--on-surface-variant);
-  margin-bottom: 1rem;
-  font-size: var(--fs-body-md);
-}
+
 
 .what-is-highlight {
   color: var(--primary);
