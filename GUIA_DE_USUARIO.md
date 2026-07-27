@@ -233,6 +233,14 @@ Las zonas internas (1-4) se separan visualmente de las perimetrales (5-8).
 
 Una tabla adicional muestra el rendimiento del bateador **según el tipo de lanzamiento** (Drop, Riser, Curva, Cambio, Screw, Otro), incluyendo: cuántos vio, cuántos terminaron en AB, cuántos K logró el pitcher y el AVG contra ese lanzamiento. Solo aparecen los tipos de lanzamiento que realmente se registraron.
 
+### Heat Map en vivo (on-the-fly)
+
+Podés consultar el Heat Map y las estadísticas del bateador en tiempo real mientras el partido está en curso, sin necesidad de finalizarlo. Esto te permite ajustar la estrategia lanzamiento a lanzamiento.
+
+### Exportar el Heat Map como imagen (PNG)
+
+Si necesitás compartir el análisis visual rápidamente, podés exportar el Heat Map generado como una imagen PNG. Solo presioná el botón de exportación y la imagen de la zona de strike con sus colores correspondientes se descargará a tu dispositivo.
+
 ---
 
 ## 7. Sección Reporte: Generación de Informes
