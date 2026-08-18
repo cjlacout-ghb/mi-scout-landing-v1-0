@@ -347,13 +347,28 @@
       <div class="sidebar-title">Contenido</div>
       <ul class="sidebar-nav">
         <li><a href="#instalacion">1. Instalación</a></li>
-        <li><a href="#activacion">2. Activación de licencia</a></li>
-        <li><a href="#navegacion">3. Navegación</a></li>
+        <li>
+          <a href="#activacion">2. Activación de licencia</a>
+          <ul style="list-style: none; padding-left: 1rem; margin-top: 2px;">
+            <li><a href="#planes-licencia" style="font-size: 0.75rem; padding: 4px 12px;">Planes de Licencia</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#navegacion">3. Navegación</a>
+          <ul style="list-style: none; padding-left: 1rem; margin-top: 2px;">
+            <li><a href="#nav-idioma" style="font-size: 0.75rem; padding: 4px 12px;">Cambio de idioma (ES/EN)</a></li>
+          </ul>
+        </li>
         <li><a href="#lineup">4. Line-Up</a></li>
         <li><a href="#tracking">5. Tracking</a></li>
         <li><a href="#heatmap">6. Heat Map</a></li>
         <li><a href="#reporte">7. Reporte</a></li>
-        <li><a href="#historial">8. Historial</a></li>
+        <li>
+          <a href="#historial">8. Historial</a>
+          <ul style="list-style: none; padding-left: 1rem; margin-top: 2px;">
+            <li><a href="#historial-reanudar" style="font-size: 0.75rem; padding: 4px 12px;">Reanudar un partido</a></li>
+          </ul>
+        </li>
         <li><a href="#colores">9. Código de colores</a></li>
         <li><a href="#guardado">10. Guardado automático</a></li>
       </ul>
@@ -410,6 +425,16 @@
           <li>La app verifica la licencia con el servidor; necesitás internet <strong>solo en este paso</strong>.</li>
           <li>Una vez activada, serás redirigido a la pantalla principal.</li>
         </ul>
+        <p>Luego de la activación, MiScout revalida la licencia periódicamente cuando hay conexión disponible. Si el dispositivo pasa un tiempo prolongado sin conectarse a internet (ej. durante un torneo de varios días sin wifi), la app se puede seguir usando con normalidad durante un período de gracia de 10 días. Pasado ese plazo sin conexión, es necesario conectarse al menos una vez para seguir usando la app.</p>
+        
+        <h3 id="planes-licencia">Planes de Licencia</h3>
+        <p>MiScout ofrece dos tipos de licencia:</p>
+        <ul>
+          <li><strong>Profesional:</strong> 1 año de duración, con acceso a las actualizaciones (releases) publicadas durante ese período.</li>
+          <li><strong>Lanzamiento:</strong> duración más corta, sin acceso a actualizaciones adicionales durante su vigencia.</li>
+        </ul>
+        <p>Ambas se activan de la misma forma, ingresando el código de activación correspondiente.</p>
+        
         <div class="callout info">
           <strong>📖 Nota:</strong> Podés acceder a esta guía en cualquier momento tocando el ícono de libro en la esquina superior derecha del encabezado.
         </div>
@@ -433,6 +458,9 @@
             </tbody>
           </table>
         </div>
+        
+        <h3 id="nav-idioma">Cambio de idioma (ES/EN)</h3>
+        <p>En el encabezado, junto al ícono de libro, hay dos botones: ES y EN, para elegir el idioma de la interfaz. El cambio afecta interfaz, etiquetas y formato de fecha (DD/MM/AAAA en español, MM/DD/AAAA en inglés). Los datos ya cargados (nombres de equipos, jugadores, tipos de lanzamiento, etc.) no se traducen — se guardan tal cual se ingresaron. Se puede cambiar de idioma en cualquier momento, incluso durante un partido en curso.</p>
       </section>
 
       <!-- 4. LINE-UP -->
@@ -607,6 +635,9 @@
         <div class="callout warning">
           <strong>⚠️ Atención:</strong> La eliminación de un partido es permanente e irreversible. No hay forma de recuperar los datos una vez eliminados.
         </div>
+        
+        <h3 id="historial-reanudar">Reanudar un partido (▶ Continuar)</h3>
+        <p>Si un partido quedó sin finalizar, su tarjeta en el Historial muestra el botón ▶ Continuar. Al tocarlo, la app reabre ese partido exactamente donde se dejó, listo para seguir el tracking. Nota: solo puede haber un partido activo a la vez — si se reanuda un partido mientras hay otro en curso, el que estaba activo se finaliza automáticamente antes de reabrir el elegido.</p>
       </section>
 
       <!-- 9. COLORES -->
