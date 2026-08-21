@@ -14,7 +14,7 @@
   <meta property="og:type"        content="website" />
   <meta property="og:title"       content="MiScout | Tracking de pitcheos" />
   <meta property="og:description" content="La herramienta definitiva para tracking de pitcheos y zona de strike. Decisiones basadas en datos reales." />
-  <meta property="og:image"       content="assets/images/app-screenshot-v2.png" />
+  <meta property="og:image"       content="assets/images/pantalla_inicio.PNG" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/icon-192.png" />
@@ -81,7 +81,7 @@
       <li><a class="nav-link" href="#precios">Precios</a></li>
     </ul>
 
-    <a href="#contacto" class="btn-nav" id="nav-cta-desktop">QUIERO MI LICENCIA</a>
+    <a href="#contacto" class="btn-nav" id="nav-cta-desktop">QUIERO MI CÓDIGO</a>
 
     <!-- Hamburger -->
     <button
@@ -103,7 +103,7 @@
     <a href="#guia"      role="menuitem">Guía de Usuario</a>
     <a href="#precios"   role="menuitem">Precios</a>
     <a href="#contacto" role="menuitem" style="display: none;">Testimoniales</a>
-    <a href="#contacto" class="btn btn-primary" role="menuitem" id="nav-cta-mobile">QUIERO MI LICENCIA</a>
+    <a href="#contacto" class="btn btn-primary" role="menuitem" id="nav-cta-mobile">QUIERO MI CÓDIGO</a>
   </div>
 </nav>
 
@@ -159,7 +159,7 @@
     <!-- CTAs -->
     <div class="hero-cta-group" style="margin-top: 4rem;">
       <a href="#contacto" class="btn btn-secondary" id="hero-cta-primary">
-        Quiero mi licencia
+        Quiero mi código
       </a>
       <a href="https://mi-scout-v1-3.vercel.app/" class="btn btn-secondary" id="hero-cta-download" target="_blank" style="border: 2px solid var(--primary); background-color: rgba(245, 166, 35, 0.1); font-size: 1.05rem; padding: 0.85rem 1.7rem; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.15);">
         Descargar app <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong>
@@ -211,13 +211,15 @@
       <!-- Image mockup -->
       <div class="what-is-img-wrap reveal">
         <div class="what-is-img-inner">
-          <img
-            src="assets/images/app-mockup-mobile.png"
-            alt="Dashboard de MiScout mostrando zona de strike, heatmap y estadísticas de pitcheo"
-            loading="lazy"
-            width="600"
-            height="450"
-          />
+          <a href="assets/images/app-mockup-mobile.JPG" target="_blank" style="display: block; width: 100%; height: 100%; cursor: zoom-in;" title="Ver imagen en tamaño completo">
+            <img
+              src="assets/images/app-mockup-mobile.JPG"
+              alt="Dashboard de MiScout mostrando zona de strike, heatmap y estadísticas de pitcheo"
+              loading="lazy"
+              width="600"
+              height="450"
+            />
+          </a>
         </div>
       </div>
 
@@ -251,8 +253,7 @@
         <p class="feature-desc">
           Pantalla dedicada con el mapa de calor completo del bateador. Zonas calientes y frías, tendencias claras, listo para tomar decisiones en el momento.
         </p>
-        <!-- TODO: reemplazar por captura definitiva de heat map screen -->
-        <a href="assets/images/analitica.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="assets/images/1-mapa_calor_completo.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
       <!-- Card 2 -->
@@ -264,8 +265,7 @@
         <p class="feature-desc">
           Tocá el ícono de fuego y consultá una versión resumida del mapa de calor sin interrumpir la carga en vivo del partido.
         </p>
-        <!-- TODO: reemplazar por captura definitiva de popup de fuego -->
-        <a href="assets/images/analitica.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="assets/images/2-mapa_calor_resumido.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
       <!-- Card 3 -->
@@ -277,11 +277,22 @@
         <p class="feature-desc">
           Dentro del mapa de calor, mirá el detalle de turnos por zona de strike y su relación con cada tipo de lanzamiento — identificá qué pitcheo funciona en cada ubicación.
         </p>
-        <!-- TODO: reemplazar por captura definitiva de desglose por zona -->
-        <a href="assets/images/analitica.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="assets/images/3-desglose_zona.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
-      <!-- Card 4 — SIN CAMBIOS -->
+      <!-- Card 4 -->
+      <div class="feature-card reveal">
+        <div class="feature-icon" aria-hidden="true">
+          <span class="material-symbols-outlined">dashboard</span>
+        </div>
+        <h3 class="feature-title">Números claros, decisiones rápidas</h3>
+        <p class="feature-desc">
+          Las estadísticas completas del bateador en mini cards, listas para leer entre lanzamiento y lanzamiento — AB, H, A/F, KS/KL, BB/HBP, AVG.
+        </p>
+        <a href="assets/images/4-minicards.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+      </div>
+
+      <!-- Card 5 -->
       <div class="feature-card reveal">
         <div class="feature-icon" aria-hidden="true">
           <span class="material-symbols-outlined">track_changes</span>
@@ -291,20 +302,7 @@
           Interfaz optimizada para trackear el lanzamiento que define cada turno.
           Registrá zona, tipo de pitcheo y resultado del turno, en segundos.
         </p>
-        <a href="assets/images/tracking_preciso.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="feature-card reveal">
-        <div class="feature-icon" aria-hidden="true">
-          <span class="material-symbols-outlined">dashboard</span>
-        </div>
-        <h3 class="feature-title">Números claros, decisiones rápidas</h3>
-        <p class="feature-desc">
-          AB, H, A/F, KS/KL, BB/HBP, AVG — el perfil completo del bateador en mini cards, listas para leer entre lanzamiento y lanzamiento.
-        </p>
-        <!-- TODO: reemplazar por captura definitiva de mini cards de estadísticas -->
-        <a href="assets/images/analitica.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="assets/images/5-tracking.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
       <!-- Card 6 — SIN CAMBIOS -->
@@ -316,7 +314,7 @@
         <p class="feature-desc">
           Cargá datos inning tras inning sin perder el hilo. <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> acompaña el partido de principio a fin, en tiempo real. Sin interrupciones.
         </p>
-        <a href="#" data-images="assets/images/flujo_1.PNG,assets/images/flujo_2.PNG,assets/images/flujo_3.PNG,assets/images/flujo_4.PNG,assets/images/flujo_5.PNG,assets/images/flujo_6.PNG,assets/images/flujo_7.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="#" data-images="assets/images/6-flujo1.PNG,assets/images/6-flujo2.PNG,assets/images/6-flujo3.PNG,assets/images/6-flujo4.PNG,assets/images/6-flujo5.PNG,assets/images/6-flujo6.PNG,assets/images/6-flujo7.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
       <!-- Card 7 — FUSIÓN de Reportes en .md + Historial completo -->
@@ -326,9 +324,9 @@
         </div>
         <h3 class="feature-title">Reportes e historial completo</h3>
         <p class="feature-desc">
-          Exportá informes detallados —individuales o por equipo— listos para el cuerpo técnico. Accedé además al historial completo, acumulado o separado por partido.
+          Exportá informes detallados —individuales o por equipo— listos para ser analizados. Accedé además al historial de juegos completo, acumulado o separado por partido.
         </p>
-        <a href="#" data-images="assets/images/reportes_1.PNG,assets/images/reportes_2.PNG,assets/images/historial_completo.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="#" data-images="assets/images/7-reporte1.PNG,assets/images/7-reporte2.PNG,assets/images/7-historial.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
         <a href="#" id="btn-importante-historial" style="display:inline-block; margin-top:0.5rem; margin-left:0.75rem; padding: 0.2rem 0.6rem; background: #F5A623; color: #000; font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-decoration: none; letter-spacing: 0.05em;">⚠ IMPORTANTE</a>
       </div>
 
@@ -342,7 +340,6 @@
           Funciona 100% offline durante el partido. Conectate solo para la
           activación inicial. <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> siempre estará disponible en tu dispositivo.
         </p>
-        <a href="assets/images/sin_conexion.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
       <!-- Card 9 -->
@@ -354,8 +351,7 @@
         <p class="feature-desc">
           Toda la plataforma en tu idioma. Cambiá entre español e inglés cuando quieras.
         </p>
-        <!-- TODO: reemplazar por captura definitiva o remover el link ver-más si esta card no amerita imagen -->
-        <a href="assets/images/analitica.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="#" data-images="assets/images/9-1_idiomaES.PNG,assets/images/9-2_idiomaEN.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
       </div>
 
     </div>
@@ -531,7 +527,7 @@
         <div class="guide-phone-frame gold-glow">
           <div class="guide-phone-screen">
             <img
-              src="assets/images/app-screenshot-v2.png"
+              src="assets/images/pantalla_inicio.PNG"
               alt="Pantalla principal de MiScout mostrando el inicio de sesión y botón Comenzar Scouting"
               loading="lazy"
               width="828"
