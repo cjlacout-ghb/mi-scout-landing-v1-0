@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Anti-FOUC: ocultar body hasta que i18n aplique el idioma correcto -->
+  <style>body{visibility:hidden;}</style>
+  <script src="js/i18n.js"></script>
 
   <!-- SEO -->
-  <title>MiScout | Tracking de pitcheos</title>
-  <meta name="description" content="MiScout es la herramienta definitiva para tracking de pitcheos y zona de strike. Registrá cada lanzamiento, analizá zonas de strike y generá reportes de élite en tiempo real." />
-  <meta name="keywords" content="MiScout, scouting softbol, pitcheo, zona de strike, heatmap, entrenador, scout, softbol profesional" />
+  <title data-i18n="meta_title">MiScout | Tracking de pitcheos</title>
+  <meta name="description" content="MiScout es la herramienta definitiva para tracking de pitcheos y zona de strike. Registrá cada lanzamiento, analizá zonas de strike y generá reportes de élite en tiempo real." data-i18n-attr-content="meta_description" />
+  <meta name="keywords" content="MiScout, scouting softbol, pitcheo, zona de strike, heatmap, entrenador, scout, softbol profesional" data-i18n-attr-content="meta_keywords" />
   <meta name="author" content="Cristian J. Lacout" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="MiScout | Tracking de pitcheos" />
-  <meta property="og:description" content="La herramienta definitiva para tracking de pitcheos y zona de strike. Decisiones basadas en datos reales." />
+  <meta property="og:title"       content="MiScout | Tracking de pitcheos" data-i18n-attr-content="og_title" />
+  <meta property="og:description" content="La herramienta definitiva para tracking de pitcheos y zona de strike. Decisiones basadas en datos reales." data-i18n-attr-content="og_description" />
   <meta property="og:image"       content="assets/images/pantalla_inicio.PNG" />
 
   <!-- Favicon -->
@@ -62,6 +65,17 @@
 <body>
 
 <!-- ============================================================
+     TOP BAR (Language Toggle Desktop)
+     ============================================================ -->
+<div class="top-bar-lang" id="top-bar-lang">
+  <div class="container top-bar-inner">
+    <button id="lang-toggle-es" class="lang-toggle-btn" aria-label="Cambiar a Español">ES</button>
+    <span class="lang-sep">|</span>
+    <button id="lang-toggle-en" class="lang-toggle-btn" aria-label="Switch to English">EN</button>
+  </div>
+</div>
+
+<!-- ============================================================
      NAVBAR
      ============================================================ -->
 <nav class="nav" id="navbar" role="navigation" aria-label="Navegación principal">
@@ -74,14 +88,14 @@
 
     <!-- Desktop links -->
     <ul class="nav-links" role="list">
-      <li><a class="nav-link" href="#que-es">¿Qué es?</a></li>
-      <li><a class="nav-link" href="#funciones" style="color: #F5A623; text-decoration: underline; text-underline-offset: 5px;">Funciones</a></li>
-      <li><a class="nav-link" href="#para-quien">¿Para quién?</a></li>
-      <li><a class="nav-link" href="#guia">Guía de usuario</a></li>
-      <li><a class="nav-link" href="#precios">Precios</a></li>
+      <li><a class="nav-link" href="#que-es" data-i18n="nav_que_es">¿Qué es?</a></li>
+      <li><a class="nav-link" href="#funciones" style="color: #F5A623; text-decoration: underline; text-underline-offset: 5px;" data-i18n="nav_funciones">Funciones</a></li>
+      <li><a class="nav-link" href="#para-quien" data-i18n="nav_para_quien">¿Para quién?</a></li>
+      <li><a class="nav-link" href="#guia" data-i18n="nav_guia">Guía de usuario</a></li>
+      <li><a class="nav-link" href="#precios" data-i18n="nav_precios">Precios</a></li>
     </ul>
 
-    <a href="#contacto" class="btn-nav" id="nav-cta-desktop">QUIERO MI CÓDIGO</a>
+    <a href="#contacto" class="btn-nav" id="nav-cta-desktop" data-i18n="nav_cta">QUIERO MI CÓDIGO</a>
 
     <!-- Hamburger -->
     <button
@@ -97,13 +111,18 @@
 
   <!-- Mobile drawer -->
   <div class="nav-mobile-drawer" id="nav-mobile-drawer" role="menu">
-    <a href="#que-es"    role="menuitem">¿Qué es?</a>
-    <a href="#funciones" role="menuitem" style="color: #F5A623; text-decoration: underline; text-underline-offset: 5px;">Funciones</a>
-    <a href="#para-quien" role="menuitem">¿Para quién?</a>
-    <a href="#guia"      role="menuitem">Guía de Usuario</a>
-    <a href="#precios"   role="menuitem">Precios</a>
+    <div class="mobile-lang-toggle">
+      <button id="lang-toggle-es-mobile" class="lang-toggle-btn" aria-label="Cambiar a Español">ES</button>
+      <span class="lang-sep">|</span>
+      <button id="lang-toggle-en-mobile" class="lang-toggle-btn" aria-label="Switch to English">EN</button>
+    </div>
+    <a href="#que-es"    role="menuitem" data-i18n="nav_que_es">¿Qué es?</a>
+    <a href="#funciones" role="menuitem" style="color: #F5A623; text-decoration: underline; text-underline-offset: 5px;" data-i18n="nav_funciones">Funciones</a>
+    <a href="#para-quien" role="menuitem" data-i18n="nav_para_quien">¿Para quién?</a>
+    <a href="#guia"      role="menuitem" data-i18n="nav_guia">Guía de Usuario</a>
+    <a href="#precios"   role="menuitem" data-i18n="nav_precios">Precios</a>
     <a href="#contacto" role="menuitem" style="display: none;">Testimoniales</a>
-    <a href="#contacto" class="btn btn-primary" role="menuitem" id="nav-cta-mobile">QUIERO MI CÓDIGO</a>
+    <a href="#contacto" class="btn btn-primary" role="menuitem" id="nav-cta-mobile" data-i18n="nav_cta">QUIERO MI CÓDIGO</a>
   </div>
 </nav>
 
@@ -119,7 +138,7 @@
 
   <div class="container" style="position:relative;z-index:2;">
     <!-- Eyebrow -->
-    <span class="badge badge-gold" style="margin-bottom:1.5rem; display:inline-block;">
+    <span class="badge badge-gold" style="margin-bottom:1.5rem; display:inline-block;" data-i18n="hero_badge">
       APP PROFESIONAL PARA SOFTBOL
     </span>
 
@@ -129,7 +148,7 @@
     </h1>
 
     <!-- Subtitle -->
-    <p class="hero-subtitle">
+    <p class="hero-subtitle" data-i18n="hero_subtitle">
       La herramienta definitiva para <br>
       tracking de pitcheos y zona de strike. <br>
       Tomá decisiones basadas en datos reales <br>
@@ -140,31 +159,31 @@
     <div class="hero-stats" style="margin-top: 2rem;">
       <div class="hero-stat reveal">
         <div class="hero-stat-number" data-counter="8" data-suffix="">8</div>
-        <div class="hero-stat-label" style="color: var(--text-muted);">Zonas de Tracking</div>
+        <div class="hero-stat-label" style="color: var(--text-muted);" data-i18n="hero_stat_zonas_label">Zonas de Tracking</div>
       </div>
       <div class="hero-stat reveal">
         <div class="hero-stat-number" data-counter="6" data-suffix="">6</div>
-        <div class="hero-stat-label" style="color: var(--text-muted);">Tipos de Pitcheos</div>
+        <div class="hero-stat-label" style="color: var(--text-muted);" data-i18n="hero_stat_pitcheos_label">Tipos de Pitcheos</div>
       </div>
       <div class="hero-stat reveal">
-        <div class="hero-stat-number">MAPA DE CALOR</div>
-        <div class="hero-stat-label" style="color: var(--text-muted);">De cada bateador</div>
+        <div class="hero-stat-number" data-i18n="hero_stat_heatmap">MAPA DE CALOR</div>
+        <div class="hero-stat-label" style="color: var(--text-muted);" data-i18n="hero_stat_heatmap_label">De cada bateador</div>
       </div>
       <div class="hero-stat reveal">
         <div class="hero-stat-number" data-counter="100" data-suffix="%">100%</div>
-        <div class="hero-stat-label" style="color: var(--text-muted);">Offline</div>
+        <div class="hero-stat-label" style="color: var(--text-muted);" data-i18n="hero_stat_offline_label">Offline</div>
       </div>
     </div>
 
     <!-- CTAs -->
     <div class="hero-cta-group" style="margin-top: 4rem;">
-      <a href="#contacto" class="btn btn-secondary" id="hero-cta-primary">
+      <a href="#contacto" class="btn btn-secondary" id="hero-cta-primary" data-i18n="hero_cta_primary">
         Quiero mi código
       </a>
-      <a href="https://mi-scout-v1-3.vercel.app/" class="btn btn-secondary" id="hero-cta-download" target="_blank" style="border: 2px solid var(--primary); background-color: rgba(245, 166, 35, 0.1); font-size: 1.05rem; padding: 0.85rem 1.7rem; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.15);">
+      <a href="https://mi-scout-v1-3.vercel.app/" class="btn btn-secondary" id="hero-cta-download" target="_blank" style="border: 2px solid var(--primary); background-color: rgba(245, 166, 35, 0.1); font-size: 1.05rem; padding: 0.85rem 1.7rem; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.15);" data-i18n="hero_cta_download">
         Descargar app <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong>
       </a>
-      <a href="#guia" class="btn btn-secondary" id="hero-cta-secondary">
+      <a href="#guia" class="btn btn-secondary" id="hero-cta-secondary" data-i18n="hero_cta_secondary">
         Ver guía de usuario
       </a>
     </div>
@@ -178,13 +197,13 @@
 <section class="section what-is" id="que-es" aria-labelledby="que-es-title">
   <div class="container">
     <div class="what-is-intro">
-      <span class="section-eyebrow">¿Qué es <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong>?</span>
+      <span class="section-eyebrow" data-i18n="que_es_eyebrow">¿Qué es <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong>?</span>
       <h2 class="section-title reveal" id="que-es-title">
-        Potenciá tu Análisis <span class="text-gold">Sin Límites</span>
+        <span data-i18n="que_es_title_pre">Potenciá tu Análisis</span> <span class="text-gold" data-i18n="que_es_title_gold">Sin Límites</span>
       </h2>
-      <p class="what-is-intro-text reveal">
+      <p class="what-is-intro-text reveal" data-i18n="que_es_intro">
         Los cuerpos técnicos toman decisiones más inteligentes cuando se basan en datos. Hasta ahora, no existía en el mundo del softbol una herramienta que capture esa información valiosa, en el momento y accesible para todos. <br>
-        <span style="font-size: 1.35em; display: inline-block; margin-top: 0.5rem; line-height: 1.2;"><span style="text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; text-decoration-color: var(--primary);"><strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> cambia eso</span>.</span>
+        <span style="font-size: 1.35em; display: inline-block; margin-top: 0.5rem; line-height: 1.2;" data-i18n="que_es_intro_highlight"><span style="text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; text-decoration-color: var(--primary);"><strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> cambia eso</span>.</span>
       </p>
     </div>
     <div class="what-is-grid">
@@ -192,7 +211,7 @@
       <!-- Copy -->
       <div>
         <div class="what-is-body reveal">
-          <p style="color:var(--text-muted);margin-bottom:2rem;" class="reveal">
+          <p style="color:var(--text-muted);margin-bottom:2rem;" class="reveal" data-i18n="que_es_body">
             <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> te permite registrar cada lanzamiento con precisión - zona, tipo de pitcheo, resultado del turno - mientras el partido transcurre. Sin interrupciones. Sin perder el foco. <br>
             <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> genera un mapa completo del bateador rival. Zonas calientes y frías. Las debilidades contra cada tipo de pitcheo. Los mapas de calor convierten partidos enteros en inteligencia táctica. Lo que antes tomaba horas construir con planillas y videos, ahora está listo al final de cada turno. <br>
             El pitcher que gana no es siempre el más rápido. Gana el que lanza en la ubicación correcta. <br>
@@ -204,7 +223,7 @@
           <div class="what-is-tag-icon" aria-hidden="true">
             <span class="material-symbols-outlined">tablet_android</span>
           </div>
-          <span class="what-is-tag-text">Optimizada para Dispositivos móviles</span>
+          <span class="what-is-tag-text" data-i18n="que_es_tag">Optimizada para Dispositivos móviles</span>
         </a>
       </div>
 
@@ -235,9 +254,9 @@
   <div class="container">
     <div class="section-header">
       <h2 class="section-title reveal" id="funciones-title">
-        Funciones de <span class="text-gold">Élite</span>
+        <span data-i18n="features_title_pre">Funciones de</span> <span class="text-gold" data-i18n="features_title_gold">Élite</span>
       </h2>
-      <p class="section-subtitle reveal">
+      <p class="section-subtitle reveal" data-i18n="features_subtitle">
         Todo lo que necesitás para dominar la estrategia del ataque y la defensa.
       </p>
     </div>
@@ -249,11 +268,11 @@
         <div class="feature-icon" aria-hidden="true">
           <span class="material-symbols-outlined">grid_view</span>
         </div>
-        <h3 class="feature-title">Mapa de calor completo</h3>
-        <p class="feature-desc">
+        <h3 class="feature-title" data-i18n="feature_1_title">Mapa de calor completo</h3>
+        <p class="feature-desc" data-i18n="feature_1_desc">
           Pantalla dedicada con el mapa de calor completo del bateador. Zonas calientes y frías, tendencias claras, listo para tomar decisiones en el momento.
         </p>
-        <a href="assets/images/1-mapa_calor_completo.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="assets/images/1-mapa_calor_completo.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;" data-i18n="ver_mas">ver más</a>
       </div>
 
       <!-- Card 2 -->
@@ -261,11 +280,11 @@
         <div class="feature-icon" aria-hidden="true">
           <span class="material-symbols-outlined">local_fire_department</span>
         </div>
-        <h3 class="feature-title">Acceso rápido, sin salir del partido</h3>
-        <p class="feature-desc">
+        <h3 class="feature-title" data-i18n="feature_2_title">Acceso rápido, sin salir del partido</h3>
+        <p class="feature-desc" data-i18n="feature_2_desc">
           Tocá el ícono de fuego y consultá una versión resumida del mapa de calor sin interrumpir la carga en vivo del partido.
         </p>
-        <a href="assets/images/2-mapa_calor_resumido.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="assets/images/2-mapa_calor_resumido.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;" data-i18n="ver_mas">ver más</a>
       </div>
 
       <!-- Card 3 -->
@@ -273,11 +292,11 @@
         <div class="feature-icon" aria-hidden="true">
           <span class="material-symbols-outlined">query_stats</span>
         </div>
-        <h3 class="feature-title">Desglose por zona y tipo de pitcheo</h3>
-        <p class="feature-desc">
+        <h3 class="feature-title" data-i18n="feature_3_title">Desglose por zona y tipo de pitcheo</h3>
+        <p class="feature-desc" data-i18n="feature_3_desc">
           Dentro del mapa de calor, mirá el detalle de turnos por zona de strike y su relación con cada tipo de lanzamiento — identificá qué pitcheo funciona en cada ubicación.
         </p>
-        <a href="assets/images/3-desglose_zona.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="assets/images/3-desglose_zona.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;" data-i18n="ver_mas">ver más</a>
       </div>
 
       <!-- Card 4 -->
@@ -285,11 +304,11 @@
         <div class="feature-icon" aria-hidden="true">
           <span class="material-symbols-outlined">dashboard</span>
         </div>
-        <h3 class="feature-title">Números claros, decisiones rápidas</h3>
-        <p class="feature-desc">
+        <h3 class="feature-title" data-i18n="feature_4_title">Números claros, decisiones rápidas</h3>
+        <p class="feature-desc" data-i18n="feature_4_desc">
           Las estadísticas completas del bateador en mini cards, listas para leer entre lanzamiento y lanzamiento — AB, H, A/F, KS/KL, BB/HBP, AVG.
         </p>
-        <a href="assets/images/4-minicards.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="assets/images/4-minicards.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;" data-i18n="ver_mas">ver más</a>
       </div>
 
       <!-- Card 5 -->
@@ -297,12 +316,12 @@
         <div class="feature-icon" aria-hidden="true">
           <span class="material-symbols-outlined">track_changes</span>
         </div>
-        <h3 class="feature-title">Tracking preciso</h3>
-        <p class="feature-desc">
+        <h3 class="feature-title" data-i18n="feature_5_title">Tracking preciso</h3>
+        <p class="feature-desc" data-i18n="feature_5_desc">
           Interfaz optimizada para trackear el lanzamiento que define cada turno.
           Registrá zona, tipo de pitcheo y resultado del turno, en segundos.
         </p>
-        <a href="assets/images/5-tracking.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="assets/images/5-tracking.PNG" target="_blank" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;" data-i18n="ver_mas">ver más</a>
       </div>
 
       <!-- Card 6 — SIN CAMBIOS -->
@@ -310,11 +329,11 @@
         <div class="feature-icon" aria-hidden="true">
           <span class="material-symbols-outlined">bolt</span>
         </div>
-        <h3 class="feature-title">Flujo de carga ágil</h3>
-        <p class="feature-desc">
+        <h3 class="feature-title" data-i18n="feature_6_title">Flujo de carga ágil</h3>
+        <p class="feature-desc" data-i18n="feature_6_desc">
           Cargá datos inning tras inning sin perder el hilo. <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> acompaña el partido de principio a fin, en tiempo real. Sin interrupciones.
         </p>
-        <a href="#" data-images="assets/images/6-flujo1.PNG,assets/images/6-flujo2.PNG,assets/images/6-flujo3.PNG,assets/images/6-flujo4.PNG,assets/images/6-flujo5.PNG,assets/images/6-flujo6.PNG,assets/images/6-flujo7.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="#" data-images="assets/images/6-flujo1.PNG,assets/images/6-flujo2.PNG,assets/images/6-flujo3.PNG,assets/images/6-flujo4.PNG,assets/images/6-flujo5.PNG,assets/images/6-flujo6.PNG,assets/images/6-flujo7.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;" data-i18n="ver_mas">ver más</a>
       </div>
 
       <!-- Card 7 — FUSIÓN de Reportes en .md + Historial completo -->
@@ -322,12 +341,12 @@
         <div class="feature-icon" aria-hidden="true">
           <span class="material-symbols-outlined">assignment</span>
         </div>
-        <h3 class="feature-title">Reportes e historial completo</h3>
-        <p class="feature-desc">
+        <h3 class="feature-title" data-i18n="feature_7_title">Reportes e historial completo</h3>
+        <p class="feature-desc" data-i18n="feature_7_desc">
           Exportá informes detallados —individuales o por equipo— listos para ser analizados. Accedé además al historial de juegos completo, acumulado o separado por partido.
         </p>
-        <a href="#" data-images="assets/images/7-reporte1.PNG,assets/images/7-reporte2.PNG,assets/images/7-historial.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
-        <a href="#" id="btn-importante-historial" style="display:inline-block; margin-top:0.5rem; margin-left:0.75rem; padding: 0.2rem 0.6rem; background: #F5A623; color: #000; font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-decoration: none; letter-spacing: 0.05em;">⚠ IMPORTANTE</a>
+        <a href="#" data-images="assets/images/7-reporte1.PNG,assets/images/7-reporte2.PNG,assets/images/7-historial.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;" data-i18n="ver_mas">ver más</a>
+        <a href="#" id="btn-importante-historial" style="display:inline-block; margin-top:0.5rem; margin-left:0.75rem; padding: 0.2rem 0.6rem; background: #F5A623; color: #000; font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-decoration: none; letter-spacing: 0.05em;" data-i18n="importante_badge">⚠ IMPORTANTE</a>
       </div>
 
       <!-- Card 8 — SIN CAMBIOS -->
@@ -335,8 +354,8 @@
         <div class="feature-icon" aria-hidden="true">
           <span class="material-symbols-outlined">wifi_off</span>
         </div>
-        <h3 class="feature-title">Sin conexión</h3>
-        <p class="feature-desc">
+        <h3 class="feature-title" data-i18n="feature_8_title">Sin conexión</h3>
+        <p class="feature-desc" data-i18n="feature_8_desc">
           Funciona 100% offline durante el partido. Conectate solo para la
           activación inicial. <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> siempre estará disponible en tu dispositivo.
         </p>
@@ -347,11 +366,11 @@
         <div class="feature-icon" aria-hidden="true">
           <span class="material-symbols-outlined">translate</span>
         </div>
-        <h3 class="feature-title">Disponible en Español e Inglés</h3>
-        <p class="feature-desc">
+        <h3 class="feature-title" data-i18n="feature_9_title">Disponible en Español e Inglés</h3>
+        <p class="feature-desc" data-i18n="feature_9_desc">
           Toda la plataforma en tu idioma. Cambiá entre español e inglés cuando quieras.
         </p>
-        <a href="#" data-images="assets/images/9-1_idiomaES.PNG,assets/images/9-2_idiomaEN.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;">ver más</a>
+        <a href="#" data-images="assets/images/9-1_idiomaES.PNG,assets/images/9-2_idiomaEN.PNG" style="display:inline-block; margin-top:0.5rem; color: var(--gold); font-size: 0.85rem; text-decoration: underline;" data-i18n="ver_mas">ver más</a>
       </div>
 
     </div>
@@ -366,7 +385,7 @@
   <div class="container">
     <div class="section-header">
       <h2 class="section-title reveal" id="para-quien-title">
-        Diseñada para <span class="text-gold">Ganadores</span>
+        <span data-i18n="who_title_pre">Diseñada para</span> <span class="text-gold" data-i18n="who_title_gold">Ganadores</span>
       </h2>
     </div>
 
@@ -382,8 +401,8 @@
             height="896"
           />
         </div>
-        <h3 class="who-title">Entrenadores</h3>
-        <p class="who-desc">
+        <h3 class="who-title" data-i18n="who_1_title">Entrenadores</h3>
+        <p class="who-desc" data-i18n="who_1_desc">
           Ajustá tu rotación y planes de juego basándote en tendencias reales
           de pitcheo y bateo, no en suposiciones.
         </p>
@@ -399,8 +418,8 @@
             height="896"
           />
         </div>
-        <h3 class="who-title">Scouts</h3>
-        <p class="who-desc">
+        <h3 class="who-title" data-i18n="who_2_title">Scouts</h3>
+        <p class="who-desc" data-i18n="who_2_desc">
           Multiplicá el impacto de tu intuición con datos precisos.
           Creá reportes estratégicos que aseguran cada decisión.
         </p>
@@ -416,8 +435,8 @@
             height="896"
           />
         </div>
-        <h3 class="who-title">Clubes</h3>
-        <p class="who-desc">
+        <h3 class="who-title" data-i18n="who_3_title">Clubes</h3>
+        <p class="who-desc" data-i18n="who_3_desc">
           Estandarizá el proceso de tracking en todas las categorías de tu club
           con una sola plataforma unificada.
         </p>
@@ -535,21 +554,21 @@
             />
           </div>
         </div>
-        <p style="text-align:center; margin-top:1.25rem; font-size:12px; color:var(--text-muted); letter-spacing:0.06em;">
+        <p style="text-align:center; margin-top:1.25rem; font-size:12px; color:var(--text-muted); letter-spacing:0.06em;" data-i18n="guide_caption">
           <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> - Pantalla de Inicio
         </p>
         <div style="text-align:center; margin-top:1.5rem;">
-          <a href="Guia_de_Usuario.html" class="btn btn-primary gold-glow" target="_blank">VER GUÍA EN DETALLE</a>
+          <a href="Guia_de_Usuario.html" id="guide-btn-link" class="btn btn-primary gold-glow" target="_blank" data-i18n="guide_btn">VER GUÍA EN DETALLE</a>
         </div>
       </div>
 
       <!-- Steps -->
       <div>
-        <span class="section-eyebrow">Guía de Usuario</span>
+        <span class="section-eyebrow" data-i18n="guide_eyebrow">Guía de Usuario</span>
         <h2 class="section-title reveal" id="guia-title">
-          Empezá en <span class="text-gold">Minutos</span>
+          <span data-i18n="guide_title_pre">Empezá en</span> <span class="text-gold" data-i18n="guide_title_gold">Minutos</span>
         </h2>
-        <p style="color:var(--text-muted);margin-bottom:2rem;" class="reveal">
+        <p style="color:var(--text-muted);margin-bottom:2rem;" class="reveal" data-i18n="guide_intro">
           <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> es una PWA: no necesitás ninguna tienda de aplicaciones.
           Instalala directamente desde tu navegador y empezá a scoutear hoy.
         </p>
@@ -559,40 +578,40 @@
           <div class="guide-step reveal">
             <div class="guide-step-num" aria-hidden="true">01</div>
             <div class="guide-step-content">
-              <h4>Instalá la app</h4>
-              <p>En Safari (iOS): Compartir → Agregar a inicio. En Chrome (Android): Menú → Agregar a pantalla principal. Listo, aparece como cualquier app.</p>
+              <h4 data-i18n="guide_step_1_title">Instalá la app</h4>
+              <p data-i18n="guide_step_1_desc">En Safari (iOS): Compartir → Agregar a inicio. En Chrome (Android): Menú → Agregar a pantalla principal. Listo, aparece como cualquier app.</p>
             </div>
           </div>
 
           <div class="guide-step reveal">
             <div class="guide-step-num" aria-hidden="true">02</div>
             <div class="guide-step-content">
-              <h4>Activá tu licencia</h4>
-              <p>Ingresá el código de activación (formato <code style="color:var(--primary-container);font-size:12px;">MISCOUT-vXX-XXXX-XXXX</code>). <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> se vincula al dispositivo de forma permanente.</p>
+              <h4 data-i18n="guide_step_2_title">Activá tu licencia</h4>
+              <p data-i18n="guide_step_2_desc">Ingresá el código de activación (formato <code style="color:var(--primary-container);font-size:12px;">MISCOUT-vXX-XXXX-XXXX</code>). <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> se vincula al dispositivo de forma permanente.</p>
             </div>
           </div>
 
           <div class="guide-step reveal">
             <div class="guide-step-num" aria-hidden="true">03</div>
             <div class="guide-step-content">
-              <h4>Configurá el partido</h4>
-              <p>Ingresá los equipos, el evento y cargá el line-up. Elegí la perspectiva de visualización: catcher o pitcher.</p>
+              <h4 data-i18n="guide_step_3_title">Configurá el partido</h4>
+              <p data-i18n="guide_step_3_desc">Ingresá los equipos, el evento y cargá el line-up. Elegí la perspectiva de visualización: catcher o pitcher.</p>
             </div>
           </div>
 
           <div class="guide-step reveal">
             <div class="guide-step-num" aria-hidden="true">04</div>
             <div class="guide-step-content">
-              <h4>Registrá en tiempo real</h4>
-              <p>Tocá la zona de strike, elegí el tipo de lanzamiento y el resultado del turno. Toda la información se guarda automáticamente.</p>
+              <h4 data-i18n="guide_step_4_title">Registrá en tiempo real</h4>
+              <p data-i18n="guide_step_4_desc">Tocá la zona de strike, elegí el tipo de lanzamiento y el resultado del turno. Toda la información se guarda automáticamente.</p>
             </div>
           </div>
 
           <div class="guide-step reveal">
             <div class="guide-step-num" aria-hidden="true">05</div>
             <div class="guide-step-content">
-              <h4>Analizá y exportá</h4>
-              <p>Consultá el mapa de calor, las estadísticas por zona y tipo de lanzamiento. Descargá el reporte en formato <code style="color:var(--primary-container);font-size:12px;">.MD</code> al finalizar.</p>
+              <h4 data-i18n="guide_step_5_title">Analizá y exportá</h4>
+              <p data-i18n="guide_step_5_desc">Consultá el mapa de calor, las estadísticas por zona y tipo de lanzamiento. Descargá el reporte en formato <code style="color:var(--primary-container);font-size:12px;">.MD</code> al finalizar.</p>
             </div>
           </div>
 
@@ -611,9 +630,9 @@
   <div class="container">
     <div class="section-header">
       <h2 class="section-title reveal" id="precios-title">
-        Precio <span class="text-gold">Directo</span>
+        <span data-i18n="pricing_title_pre">Precio</span> <span class="text-gold" data-i18n="pricing_title_gold">Directo</span>
       </h2>
-      <p class="section-subtitle reveal">
+      <p class="section-subtitle reveal" data-i18n="pricing_subtitle">
         Una inversión, todos los beneficios. Sin sorpresas.
       </p>
     </div>
@@ -624,35 +643,35 @@
         <div class="pricing-card gold-glow">
           <!-- Header badge -->
           <div class="pricing-header">
-            <span>⭐ PROMOCIÓN POR TIEMPO LIMITADO</span>
+            <span data-i18n="pricing_launch_badge">⭐ PROMOCIÓN POR TIEMPO LIMITADO</span>
           </div>
 
           <!-- Body -->
           <div class="pricing-body">
-            <h3 class="pricing-name">Pack Lanzamiento</h3>
+            <h3 class="pricing-name" data-i18n="pricing_launch_name">Pack Lanzamiento</h3>
 
             <div style="text-align: center; margin-bottom: 0; line-height: 1; display: flex; justify-content: center; align-items: baseline; gap: 8px;">
               <span class="pricing-number" data-counter="1" style="font-size: 100px; display: inline-block;">1</span>
-              <span class="pricing-number" style="font-size: 55px; position: relative; display: inline-block;">mes gratis<sup style="position: absolute; top: 0.15em; right: -1.2em; font-size: 0.35em; color: var(--text-muted);">(*)</sup></span>
+              <span class="pricing-number" style="font-size: 55px; position: relative; display: inline-block;" data-i18n="pricing_launch_free">mes gratis<sup style="position: absolute; top: 0.15em; right: -1.2em; font-size: 0.35em; color: var(--text-muted);">(*)</sup></span>
             </div>
             <div style="text-align: center; font-size: 1rem; margin-top: -0.5rem; margin-bottom: 1.5rem; visibility: hidden;">&nbsp;</div>
 
             <ul class="pricing-features" role="list">
-              <li class="pricing-feature-item">
+              <li class="pricing-feature-item" data-i18n="pricing_launch_feature_1">
                 <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
                 Acceso a 1 licencia para 1 dispositivo
               </li>
               <li class="pricing-feature-item">
                 <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
-                <span>Todas las funcionalidades<br>del <strong>Pack Profesional</strong></span>
+                <span data-i18n="pricing_launch_feature_2">Todas las funcionalidades<br>del <strong>Pack Profesional</strong></span>
               </li>
             </ul>
 
-            <a href="#contacto" class="btn btn-primary" style="width:100%; display:block; text-align:center; font-size: 1.1rem;" id="pricing-cta-lanzamiento">
+            <a href="#contacto" class="btn btn-primary" style="width:100%; display:block; text-align:center; font-size: 1.1rem;" id="pricing-cta-lanzamiento" data-i18n="pricing_launch_cta">
               Solicitar ahora
             </a>
 
-            <p class="pricing-note" style="text-align: center;">
+            <p class="pricing-note" style="text-align: center;" data-i18n="pricing_launch_note">
               (*) Promoción de lanzamiento.<br>
               Tiempo y cantidad limitados.<br>
               Contactanos para ser uno de los primeros en acceder.
@@ -669,52 +688,52 @@
         <div class="pricing-card gold-glow">
           <!-- Header badge -->
           <div class="pricing-header">
-            <span>⭐ MÁS POPULAR</span>
+            <span data-i18n="pricing_pro_badge">⭐ MÁS POPULAR</span>
           </div>
 
           <!-- Body -->
           <div class="pricing-body">
-            <h3 class="pricing-name">Pack Profesional</h3>
+            <h3 class="pricing-name" data-i18n="pricing_pro_name">Pack Profesional</h3>
 
             <div class="pricing-amount" style="margin-bottom: 0;">
               <span class="pricing-currency">USD</span>
               <span class="pricing-number" data-counter="8" style="font-size: 100px;">8</span>
-              <span class="pricing-period">/mes</span>
+              <span class="pricing-period" data-i18n="pricing_pro_period">/mes</span>
             </div>
-            <div style="text-align: center; font-size: 1rem; color: var(--text-muted, #737373); margin-top: -0.5rem; margin-bottom: 1.5rem;">pago anual (*)</div>
+            <div style="text-align: center; font-size: 1rem; color: var(--text-muted, #737373); margin-top: -0.5rem; margin-bottom: 1.5rem;" data-i18n="pricing_pro_billed">pago anual (*)</div>
 
             <ul class="pricing-features" role="list">
-              <li class="pricing-feature-item">
+              <li class="pricing-feature-item" data-i18n="pricing_pro_feature_1">
                 <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
                 Acceso a 1 licencia para 1 dispositivo
               </li>
-              <li class="pricing-feature-item">
+              <li class="pricing-feature-item" data-i18n="pricing_pro_feature_2">
                 <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
                 Base de datos local ilimitada
               </li>
-              <li class="pricing-feature-item">
+              <li class="pricing-feature-item" data-i18n="pricing_pro_feature_3">
                 <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
                 Reportes individuales y por equipo
               </li>
-              <li class="pricing-feature-item">
+              <li class="pricing-feature-item" data-i18n="pricing_pro_feature_4">
                 <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
                 Prioridad de acceso a actualizaciones
               </li>
-              <li class="pricing-feature-item">
+              <li class="pricing-feature-item" data-i18n="pricing_pro_feature_5">
                 <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
                 Funciona 100% sin conexión
               </li>
-              <li class="pricing-feature-item">
+              <li class="pricing-feature-item" data-i18n="pricing_pro_feature_6">
                 <span class="material-symbols-outlined pricing-check" style="font-variation-settings:'FILL' 1;" aria-hidden="true">check_circle</span>
                 Soporte técnico prioritario
               </li>
             </ul>
 
-            <a href="#contacto" class="btn btn-primary" style="width:100%; display:block; text-align:center; font-size: 1.1rem;" id="pricing-cta-profesional">
+            <a href="#contacto" class="btn btn-primary" style="width:100%; display:block; text-align:center; font-size: 1.1rem;" id="pricing-cta-profesional" data-i18n="pricing_pro_cta">
               Contratar ahora
             </a>
 
-            <p class="pricing-note" style="text-align: center;">
+            <p class="pricing-note" style="text-align: center;" data-i18n="pricing_pro_note">
               (*) Precio válido para Argentina. Otros países, consultanos.
             </p>
             <div style="text-align: center; margin-top: 1rem;">
@@ -737,13 +756,13 @@
 
       <!-- Info -->
       <div>
-        <span class="section-eyebrow">CONTACTO</span>
+        <span class="section-eyebrow" data-i18n="contact_eyebrow">CONTACTO</span>
         <h2 class="reveal" id="contacto-title">
           <span style="font-family:var(--font-display);font-size:var(--fs-headline-lg);text-transform:uppercase;">
-            ¿Listo para <span class="text-gold">Empezar?</span>
+            <span data-i18n="contact_title_pre">¿Listo para</span> <span class="text-gold" data-i18n="contact_title_gold">Empezar?</span>
           </span>
         </h2>
-        <p style="color:var(--text-muted);margin-bottom:2rem;" class="reveal">
+        <p style="color:var(--text-muted);margin-bottom:2rem;" class="reveal" data-i18n="contact_intro">
           Contactanos para resolver dudas, solicitar una demo personalizada
           o consultar el precio especial por múltiples licencias para tu club / organización.
         </p>
@@ -761,14 +780,14 @@
           <div class="contact-icon" aria-hidden="true">
             <span class="material-symbols-outlined">public</span>
           </div>
-          <span class="contact-text">Disponible sin conexión</span>
+          <span class="contact-text" data-i18n="contact_detail_offline">Disponible sin conexión</span>
         </div>
 
         <div class="contact-detail reveal">
           <div class="contact-icon" aria-hidden="true">
             <span class="material-symbols-outlined">devices</span>
           </div>
-          <span class="contact-text">Android · iOS · Web</span>
+          <span class="contact-text" data-i18n="contact_detail_devices">Android · iOS · Web</span>
         </div>
       </div>
 
@@ -781,7 +800,7 @@
       >
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label" for="field-nombre">Nombre *</label>
+            <label class="form-label" for="field-nombre" data-i18n="form_label_nombre">Nombre *</label>
             <input
               id="field-nombre"
               class="form-input"
@@ -789,11 +808,12 @@
               name="nombre"
               autocomplete="given-name"
               placeholder="Tu nombre"
+              data-i18n-placeholder="form_placeholder_nombre"
               required
             />
           </div>
           <div class="form-group">
-            <label class="form-label" for="field-apellido">Apellido *</label>
+            <label class="form-label" for="field-apellido" data-i18n="form_label_apellido">Apellido *</label>
             <input
               id="field-apellido"
               class="form-input"
@@ -801,13 +821,14 @@
               name="apellido"
               autocomplete="family-name"
               placeholder="Tu apellido"
+              data-i18n-placeholder="form_placeholder_apellido"
               required
             />
           </div>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="field-pais">País *</label>
+          <label class="form-label" for="field-pais" data-i18n="form_label_pais">País *</label>
           <input
             id="field-pais"
             class="form-input"
@@ -820,19 +841,20 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="field-club">Club / Organización *</label>
+          <label class="form-label" for="field-club" data-i18n="form_label_club">Club / Organización *</label>
           <input
             id="field-club"
             class="form-input"
             type="text"
             name="club"
             placeholder="Nombre de tu club o equipo"
+            data-i18n-placeholder="form_placeholder_club"
             required
           />
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="field-email">Email *</label>
+          <label class="form-label" for="field-email" data-i18n="form_label_email">Email *</label>
           <input
             id="field-email"
             class="form-input"
@@ -845,22 +867,28 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="field-mensaje">Mensaje</label>
+          <label class="form-label" for="field-mensaje" data-i18n="form_label_mensaje">Mensaje</label>
           <textarea
             id="field-mensaje"
             class="form-textarea"
             name="mensaje"
             placeholder="Contanos sobre tu equipo, tus necesidades o cualquier consulta..."
+            data-i18n-placeholder="form_placeholder_mensaje"
           ></textarea>
         </div>
 
-        <p class="form-note" style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">
+        <p class="form-note" style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;" data-i18n="form_note_required">
           (*) Los campos son obligatorios.
         </p>
 
-        <button type="submit" class="btn btn-primary" style="width:100%;" id="form-submit">
-          Enviar Mensaje
-        </button>
+        <div style="display: flex; justify-content: space-between; gap: 5%;">
+          <button type="submit" class="btn btn-primary" style="width: 47.5%; font-size: 1rem; padding: 0.85rem 0.5rem; text-align: center;" id="form-submit-lanzamiento" data-i18n="form_btn_lanzamiento">
+            PRUEBA GRATIS
+          </button>
+          <button type="submit" class="btn btn-primary" style="width: 47.5%; font-size: 1rem; padding: 0.85rem 0.5rem; text-align: center;" id="form-submit-profesional" data-i18n="form_btn_profesional">
+            PACK PROFESIONAL
+          </button>
+        </div>
 
         <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
       </form>
@@ -880,21 +908,21 @@
       <a href="#" class="footer-logo" aria-label="MiScout inicio">
         <span class="mi">Mi</span><span class="scout">Scout</span> <span class="version">v1.3.6</span>
       </a>
-      <p class="footer-copy" style="margin-top:0.5rem;">
+      <p class="footer-copy" style="margin-top:0.5rem;" data-i18n="footer_copyright">
         © 2026 MiScout — Todos los derechos reservados.<br />
         Software propietario. Queda prohibida su copia o redistribución sin autorización escrita del autor.
       </p>
-      <p class="footer-copy" style="margin-top:1rem;">
+      <p class="footer-copy" style="margin-top:1rem;" data-i18n="footer_disclaimer">
         Disclaimer: MiScout es una herramienta de análisis y seguimiento estadístico. Su uso no garantiza resultados deportivos, victorias ni mejoras de rendimiento específicas.
       </p>
       <p class="footer-copy" style="margin-top:0.5rem;">
-        Meta info: Versión 1.3.6 | Idioma: Español | Última actualización: Agosto 2026
+        Meta info: <span data-i18n="footer_meta_version">Versión 1.3.6</span> | <span id="footer-lang-label" data-i18n="footer_meta_lang_label">Idioma</span>: <span id="footer-lang-value">Español</span> | <span data-i18n="footer_meta_updated">Última actualización: Agosto 2026</span>
       </p>
     </div>
 
     <nav class="footer-links" aria-label="Links del footer">
-      <a class="footer-link" href="#contacto">Contacto</a>
-      <a class="footer-link" href="#guia">Guía de Usuario</a>
+      <a class="footer-link" href="#contacto" data-i18n="footer_link_contacto">Contacto</a>
+      <a class="footer-link" href="#guia" data-i18n="footer_link_guia">Guía de Usuario</a>
     </nav>
 
   </div>
@@ -913,7 +941,7 @@
       <div class="phone-frame">
         <div class="phone-notch"></div>
         <div class="phone-screen">
-          <img id="modal-img" src="" alt="Captura de pantalla">
+          <img id="modal-img" src="" alt="Captura de pantalla" data-i18n-attr-alt="modal_img_alt">
           <button id="prev-img" class="carousel-btn prev hidden">&#10094;</button>
           <button id="next-img" class="carousel-btn next hidden">&#10095;</button>
         </div>
@@ -925,31 +953,31 @@
   <div id="info-modal" class="modal-overlay hidden">
     <div class="info-box">
       <button id="close-info-modal" class="modal-close-icon">&times;</button>
-      <h2 class="info-title">¿Dónde se guardan tus datos?</h2>
+      <h2 class="info-title" data-i18n="modal1_title">¿Dónde se guardan tus datos?</h2>
       
       <div class="info-section">
         <div class="info-section-header">
           <span class="material-symbols-outlined text-gold">lock</span>
-          <h3>Tus datos viven en tu dispositivo</h3>
+          <h3 data-i18n="modal1_header1">Tus datos viven en tu dispositivo</h3>
         </div>
-        <p>
+        <p data-i18n="modal1_body1">
           <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> no usa servidores externos para almacenar tu información. Todos los partidos, bateadores, turnos y estadísticas se guardan directamente en la memoria de tu celular o tablet — <strong class="text-white">sin nube, sin terceros, sin suscripciones de almacenamiento</strong>.
         </p>
-        <p>Esto significa que tus datos de scouting son 100% privados y siempre accesibles, incluso sin conexión a internet.</p>
+        <p data-i18n="modal1_body2">Esto significa que tus datos de scouting son 100% privados y siempre accesibles, incluso sin conexión a internet.</p>
       </div>
 
       <div class="info-section warning-section">
         <div class="info-section-header">
           <span class="material-symbols-outlined text-error" style="color: #cc3333;">warning</span>
-          <h3>Importante: Cuidado al limpiar el navegador</h3>
+          <h3 data-i18n="modal1_header2">Importante: Cuidado al limpiar el navegador</h3>
         </div>
-        <p>La información se guarda en dos lugares:</p>
+        <p data-i18n="modal1_body3">La información se guarda en dos lugares:</p>
         <ul class="info-list">
-          <li><strong class="text-white">Tu licencia de activación:</strong> en la memoria local del navegador (localStorage).</li>
-          <li><strong class="text-white">Tus partidos e historial:</strong> en la base de datos local del dispositivo (IndexedDB).</li>
+          <li data-i18n="modal1_list1"><strong class="text-white">Tu licencia de activación:</strong> en la memoria local del navegador (localStorage).</li>
+          <li data-i18n="modal1_list2"><strong class="text-white">Tus partidos e historial:</strong> en la base de datos local del dispositivo (IndexedDB).</li>
         </ul>
-        <p>Si borrás únicamente el <em>caché del navegador</em>, tus datos están seguros. Pero si borrás <strong class="text-white">"cookies y datos de sitios"</strong> — o hacés un restablecimiento del navegador — perdés tanto la activación como todo el historial de partidos. <strong class="text-error" style="color: #cc3333;">Esta acción no tiene vuelta atrás.</strong></p>
-        <div class="highlight-box">
+        <p data-i18n="modal1_body4">Si borrás únicamente el <em>caché del navegador</em>, tus datos están seguros. Pero si borrás <strong class="text-white">"cookies y datos de sitios"</strong> — o hacés un restablecimiento del navegador — perdés tanto la activación como todo el historial de partidos. <strong class="text-error" style="color: #cc3333;">Esta acción no tiene vuelta atrás.</strong></p>
+        <div class="highlight-box" data-i18n="modal1_highlight">
           <strong class="text-gold">Recomendación:</strong> antes de limpiar el navegador, exportá tus reportes importantes desde la sección Reporte de la app.
         </div>
       </div>
@@ -960,14 +988,14 @@
   <div id="pwa-modal" class="modal-overlay hidden">
     <div class="info-box">
       <button id="close-pwa-modal" class="modal-close-icon">&times;</button>
-      <h2 class="info-title">App Optimizada</h2>
+      <h2 class="info-title" data-i18n="modal2_title">App Optimizada</h2>
       
       <div class="info-section">
         <div class="info-section-header">
           <span class="material-symbols-outlined text-gold">tablet_android</span>
-          <h3>Progressive Web App</h3>
+          <h3 data-i18n="modal2_header">Progressive Web App</h3>
         </div>
-        <p>
+        <p data-i18n="modal2_body">
           <strong class="brand-text"><span class="brand-mi">Mi</span><span class="brand-scout">Scout</span></strong> es una Progressive Web App (PWA) pensada para trabajar desde donde vos estés. Olvidate de las instalaciones complicadas; accedé desde cualquier dispositivo que cuente con un navegador.
         </p>
       </div>

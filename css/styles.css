@@ -367,11 +367,85 @@ ul {
 }
 
 /* ============================================================
+   TOP BAR (LANGUAGE)
+   ============================================================ */
+.top-bar-lang {
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border-subtle);
+  height: 30px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 101; /* Above nav */
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.lang-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 6px;
+  transition: color 0.2s ease;
+}
+
+.lang-toggle-btn:hover {
+  color: var(--on-surface);
+}
+
+.lang-toggle-btn.active {
+  color: var(--primary-container);
+  cursor: default;
+}
+
+.lang-sep {
+  color: var(--border-subtle);
+  font-size: 12px;
+  user-select: none;
+}
+
+/* Mobile drawer toggle */
+.mobile-lang-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.mobile-lang-toggle .lang-toggle-btn {
+  font-size: 14px;
+  padding: 0 12px;
+}
+
+/* Hide top bar on mobile */
+@media (max-width: 992px) {
+  .top-bar-lang {
+    display: none;
+  }
+  .nav {
+    top: 0 !important; /* Reset nav top on mobile */
+  }
+}
+
+/* ============================================================
    NAVIGATION
    ============================================================ */
 .nav {
   position: fixed;
-  top: 0;
+  top: 30px; /* Below top bar on desktop */
+
   left: 0;
   width: 100%;
   z-index: 100;

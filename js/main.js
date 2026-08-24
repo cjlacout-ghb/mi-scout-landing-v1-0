@@ -87,10 +87,37 @@
   // -----------------------------------------------------------
   // 5. FORMSPREE contact form submission
   // -----------------------------------------------------------
+  
+  function precargarMensajeSiVacio(texto) {
+    const field = document.getElementById('field-mensaje');
+    if (field && (!field.value || field.value.trim() === '')) {
+      field.value = texto;
+    }
+  }
+
   const contactForm = document.getElementById('contact-form');
   const formStatus  = document.getElementById('form-status');
 
   if (contactForm) {
+    const btnLanzamiento = document.getElementById('form-submit-lanzamiento');
+    const btnProfesional = document.getElementById('form-submit-profesional');
+
+    if (btnLanzamiento) {
+      btnLanzamiento.addEventListener('click', () => {
+        const lang = window.MiScoutI18n ? window.MiScoutI18n.detectarIdioma() : 'es';
+        const msg = (window.MISCOUT_I18N && window.MISCOUT_I18N[lang]) ? window.MISCOUT_I18N[lang].msg_lanzamiento : 'Quiero solicitar el Pack Lanzamiento (1 mes gratis).';
+        precargarMensajeSiVacio(msg);
+      });
+    }
+
+    if (btnProfesional) {
+      btnProfesional.addEventListener('click', () => {
+        const lang = window.MiScoutI18n ? window.MiScoutI18n.detectarIdioma() : 'es';
+        const msg = (window.MISCOUT_I18N && window.MISCOUT_I18N[lang]) ? window.MISCOUT_I18N[lang].msg_profesional : 'Quiero contratar el Pack Profesional.';
+        precargarMensajeSiVacio(msg);
+      });
+    }
+
     contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
@@ -99,9 +126,15 @@
         return;
       }
 
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando…';
+      const lang = window.MiScoutI18n ? window.MiScoutI18n.detectarIdioma() : 'es';
+      const dict = window.MISCOUT_I18N ? window.MISCOUT_I18N[lang] : {};
+
+      const submitBtn = e.submitter || contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      const allSubmitBtns = contactForm.querySelectorAll('button[type="submit"]');
+      
+      allSubmitBtns.forEach(btn => btn.disabled = true);
+      submitBtn.textContent = dict.form_btn_sending || 'Enviando…';
 
       try {
         const data = new FormData(contactForm);
@@ -113,17 +146,18 @@
 
         if (response.ok) {
           contactForm.reset();
-          showStatus('¡Gracias! Tu mensaje ha sido enviado.', 'success');
+          showStatus(dict.form_status_success || '¡Gracias! Tu mensaje ha sido enviado.', 'success');
         } else {
           const json = await response.json();
-          const msg = (json.errors || []).map(e => e.message).join(', ') || 'Error al enviar el mensaje.';
+          const fallbackMsg = dict.form_status_error_fallback || 'Error al enviar el mensaje.';
+          const msg = (json.errors || []).map(err => err.message).join(', ') || fallbackMsg;
           showStatus(msg, 'error');
         }
       } catch {
-        showStatus('Error de conexión. Intentá de nuevo.', 'error');
+        showStatus(dict.form_status_error_conexion || 'Error de conexión. Intentá de nuevo.', 'error');
       } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Enviar Mensaje';
+        allSubmitBtns.forEach(btn => btn.disabled = false);
+        submitBtn.textContent = originalText;
       }
     });
 
@@ -315,42 +349,22 @@
   }
 
   // --- Pre-fill message field based on pricing button clicked ---
-  const mensajeField = document.getElementById('field-mensaje');
   const ctaLanzamiento = document.getElementById('pricing-cta-lanzamiento');
   const ctaProfesional = document.getElementById('pricing-cta-profesional');
 
-  if (ctaLanzamiento && mensajeField) {
+  if (ctaLanzamiento) {
     ctaLanzamiento.addEventListener('click', () => {
-      mensajeField.value = 'Quiero solicitar el Pack Lanzamiento (1 mes gratis).';
+      const lang = window.MiScoutI18n ? window.MiScoutI18n.detectarIdioma() : 'es';
+      const msg = (window.MISCOUT_I18N && window.MISCOUT_I18N[lang]) ? window.MISCOUT_I18N[lang].msg_lanzamiento : 'Quiero solicitar el Pack Lanzamiento (1 mes gratis).';
+      precargarMensajeSiVacio(msg);
     });
   }
 
-  if (ctaProfesional && mensajeField) {
+  if (ctaProfesional) {
     ctaProfesional.addEventListener('click', () => {
-      mensajeField.value = 'Quiero contratar el Pack Profesional.';
-    });
-  }
-
-  const navCtaDesktop = document.getElementById('nav-cta-desktop');
-  const navCtaMobile = document.getElementById('nav-cta-mobile');
-
-  if (navCtaDesktop && mensajeField) {
-    navCtaDesktop.addEventListener('click', () => {
-      mensajeField.value = 'Quiero contratar el Pack Profesional.';
-    });
-  }
-
-  if (navCtaMobile && mensajeField) {
-    navCtaMobile.addEventListener('click', () => {
-      mensajeField.value = 'Quiero contratar el Pack Profesional.';
-    });
-  }
-
-  const heroCtaPrimary = document.getElementById('hero-cta-primary');
-  
-  if (heroCtaPrimary && mensajeField) {
-    heroCtaPrimary.addEventListener('click', () => {
-      mensajeField.value = 'Quiero contratar el Pack Profesional.';
+      const lang = window.MiScoutI18n ? window.MiScoutI18n.detectarIdioma() : 'es';
+      const msg = (window.MISCOUT_I18N && window.MISCOUT_I18N[lang]) ? window.MISCOUT_I18N[lang].msg_profesional : 'Quiero contratar el Pack Profesional.';
+      precargarMensajeSiVacio(msg);
     });
   }
 
