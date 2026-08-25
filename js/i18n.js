@@ -395,6 +395,28 @@ function aplicarIdioma(lang) {
     guideBtn.setAttribute('href', lang === 'en' ? 'Guia_de_Usuario_EN.html' : 'Guia_de_Usuario.html');
   }
 
+  // Swap de imágenes (data-src-en, data-href-en, data-images-en)
+  document.querySelectorAll('[data-src-en]').forEach(el => {
+    if (!el.hasAttribute('data-src-es')) {
+      el.setAttribute('data-src-es', el.getAttribute('src'));
+    }
+    el.setAttribute('src', lang === 'en' ? el.getAttribute('data-src-en') : el.getAttribute('data-src-es'));
+  });
+
+  document.querySelectorAll('[data-href-en]').forEach(el => {
+    if (!el.hasAttribute('data-href-es')) {
+      el.setAttribute('data-href-es', el.getAttribute('href'));
+    }
+    el.setAttribute('href', lang === 'en' ? el.getAttribute('data-href-en') : el.getAttribute('data-href-es'));
+  });
+
+  document.querySelectorAll('[data-images-en]').forEach(el => {
+    if (!el.hasAttribute('data-images-es')) {
+      el.setAttribute('data-images-es', el.getAttribute('data-images'));
+    }
+    el.setAttribute('data-images', lang === 'en' ? el.getAttribute('data-images-en') : el.getAttribute('data-images-es'));
+  });
+
   // Actualizar lang en <html>
   document.documentElement.setAttribute('lang', lang);
 
