@@ -1,4 +1,4 @@
-const MISCOUT_I18N = {
+window.MISCOUT_I18N = {
   es: {
     meta_title: "MiScout | Tracking de pitcheos",
     meta_description: "MiScout es la herramienta definitiva para tracking de pitcheos y zona de strike. Registrá cada lanzamiento, analizá zonas de strike y generá reportes de élite en tiempo real.",
