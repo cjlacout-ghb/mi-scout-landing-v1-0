@@ -243,6 +243,12 @@ ul {
   background-color: var(--surface-variant);
   border-color: rgba(245, 166, 35, 0.3);
 }
+.btn-form-split {
+  width: 47.5%;
+  font-size: 1rem;
+  padding: 0.85rem 0.5rem;
+  text-align: center;
+}
 
 .btn-nav {
   background-color: var(--primary-container);
