@@ -29,7 +29,7 @@ window.MISCOUT_I18N = {
     que_es_title_gold: "Sin Límites",
     que_es_intro: "Los cuerpos técnicos toman decisiones más inteligentes cuando se basan en datos. Hasta ahora, no existía en el mundo del softbol una herramienta que capture esa información valiosa, en el momento y accesible para todos.",
     que_es_intro_highlight: "MiScout cambia eso.",
-    que_es_body: "MiScout te permite registrar cada lanzamiento con precisión - zona, tipo de pitcheo, resultado del turno - mientras el partido transcurre. Sin interrupciones. Sin perder el foco. MiScout genera un mapa completo del bateador rival. Zonas calientes y frías. Las debilidades contra cada tipo de pitcheo. Los mapas de calor convierten partidos enteros en inteligencia táctica. Lo que antes tomaba horas construir con planillas y videos, ahora está listo al final de cada turno. El pitcher que gana no es siempre el más rápido. Gana el que lanza en la ubicación correcta. MiScout sabe exactamente cuál es ese lugar.",
+    que_es_body: "<strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> te permite registrar cada lanzamiento con precisión - zona, tipo de pitcheo, resultado del turno - mientras el partido transcurre. Sin interrupciones. Sin perder el foco. <strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> genera un mapa completo del bateador rival. Zonas calientes y frías. Las debilidades contra cada tipo de pitcheo. Los mapas de calor convierten partidos enteros en inteligencia táctica. Lo que antes tomaba horas construir con planillas y videos, ahora está listo al final de cada turno. El pitcher que gana no es siempre el más rápido. Gana el que lanza en la ubicación correcta. <strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> sabe exactamente cuál es ese lugar.",
     que_es_tag: "Optimizada para Dispositivos móviles",
 
     features_title_pre: "Funciones de",
@@ -47,11 +47,11 @@ window.MISCOUT_I18N = {
     feature_5_title: "Tracking preciso",
     feature_5_desc: "Interfaz optimizada para trackear el lanzamiento que define cada turno. Registrá zona, tipo de pitcheo y resultado del turno, en segundos.",
     feature_6_title: "Flujo de carga ágil",
-    feature_6_desc: "Cargá datos inning tras inning sin perder el hilo. MiScout acompaña el partido de principio a fin, en tiempo real. Sin interrupciones.",
+    feature_6_desc: "Cargá datos inning tras inning sin perder el hilo. <strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> acompaña el partido de principio a fin, en tiempo real. Sin interrupciones.",
     feature_7_title: "Reportes e historial completo",
     feature_7_desc: "Exportá informes detallados —individuales o por equipo— listos para ser analizados. Accedé además al historial de juegos completo, acumulado o separado por partido.",
     feature_8_title: "Sin conexión",
-    feature_8_desc: "Funciona 100% offline durante el partido. Conectate solo para la activación inicial. MiScout siempre estará disponible en tu dispositivo.",
+    feature_8_desc: "Funciona 100% offline durante el partido. Conectate solo para la activación inicial. <strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> siempre estará disponible en tu dispositivo.",
     feature_9_title: "Disponible en Español e Inglés",
     feature_9_desc: "Toda la plataforma en tu idioma. Cambiá entre español e inglés cuando quieras.",
     ver_mas: "ver más",
@@ -71,11 +71,11 @@ window.MISCOUT_I18N = {
     guide_eyebrow: "Guía de Usuario",
     guide_title_pre: "Empezá en",
     guide_title_gold: "Minutos",
-    guide_intro: "MiScout es una PWA: no necesitás ninguna tienda de aplicaciones. Instalala directamente desde tu navegador y empezá a scoutear hoy.",
+    guide_intro: "<strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> es una PWA: no necesitás ninguna tienda de aplicaciones. Instalala directamente desde tu navegador y empezá a scoutear hoy.",
     guide_step_1_title: "Instalá la app",
     guide_step_1_desc: "En Safari (iOS): Compartir → Agregar a inicio. En Chrome (Android): Menú → Agregar a pantalla principal. Listo, aparece como cualquier app.",
     guide_step_2_title: "Activá tu licencia",
-    guide_step_2_desc: "Ingresá el código de activación (formato MISCOUT-vXX-XXXX-XXXX). MiScout se vincula al dispositivo de forma permanente.",
+    guide_step_2_desc: "Ingresá el código de activación (formato MISCOUT-vXX-XXXX-XXXX). <strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> se vincula al dispositivo de forma permanente.",
     guide_step_3_title: "Configurá el partido",
     guide_step_3_desc: "Ingresá los equipos, el evento y cargá el line-up. Elegí la perspectiva de visualización: catcher o pitcher.",
     guide_step_4_title: "Registrá en tiempo real",
@@ -192,7 +192,7 @@ window.MISCOUT_I18N = {
     que_es_title_gold: "Without Limits",
     que_es_intro: "Coaching staffs make smarter decisions when they're based on data. Until now, softball didn't have a tool that captured that valuable information in the moment and made it accessible to everyone.",
     que_es_intro_highlight: "MiScout changes that.",
-    que_es_body: "MiScout lets you log every pitch with precision — zone, pitch type, at-bat result — as the game unfolds. No interruptions. No losing focus. MiScout builds a complete map of the opposing batter. Hot and cold zones. Weaknesses against each pitch type. Heat maps turn entire games into tactical intelligence. What used to take hours to build with spreadsheets and video is now ready by the end of every at-bat. The pitcher who wins isn't always the fastest. It's the one who throws to the right spot. MiScout knows exactly where that is.",
+    que_es_body: "<strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> lets you log every pitch with precision — zone, pitch type, at-bat result — as the game unfolds. No interruptions. No losing focus. <strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> builds a complete map of the opposing batter. Hot and cold zones. Weaknesses against each pitch type. Heat maps turn entire games into tactical intelligence. What used to take hours to build with spreadsheets and video is now ready by the end of every at-bat. The pitcher who wins isn't always the fastest. It's the one who throws to the right spot. <strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> knows exactly where that is.",
     que_es_tag: "Optimized for Mobile Devices",
 
     features_title_pre: "Elite",
@@ -210,11 +210,11 @@ window.MISCOUT_I18N = {
     feature_5_title: "Precise Tracking",
     feature_5_desc: "Interface optimized to track the pitch that defines each at-bat. Log zone, pitch type, and at-bat result in seconds.",
     feature_6_title: "Fast Data Flow",
-    feature_6_desc: "Log data inning after inning without breaking your flow. MiScout follows the game from start to finish, in real time. No interruptions.",
+    feature_6_desc: "Log data inning after inning without breaking your flow. <strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> follows the game from start to finish, in real time. No interruptions.",
     feature_7_title: "Full Reports and History",
     feature_7_desc: "Export detailed reports — individual or by team — ready to analyze. Also access the complete game history, cumulative or broken down by game.",
     feature_8_title: "Offline",
-    feature_8_desc: "Works 100% offline during the game. Only connects for initial activation. MiScout will always be available on your device.",
+    feature_8_desc: "Works 100% offline during the game. Only connects for initial activation. <strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> will always be available on your device.",
     feature_9_title: "Available in English and Spanish",
     feature_9_desc: "The entire platform in your language. Switch between English and Spanish anytime.",
     ver_mas: "see more",
@@ -234,11 +234,11 @@ window.MISCOUT_I18N = {
     guide_eyebrow: "User guide",
     guide_title_pre: "Get Started in",
     guide_title_gold: "Minutes",
-    guide_intro: "MiScout is a PWA: no app store needed. Install it directly from your browser and start scouting today.",
+    guide_intro: "<strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> is a PWA: no app store needed. Install it directly from your browser and start scouting today.",
     guide_step_1_title: "Install the app",
     guide_step_1_desc: "In Safari (iOS): Share → Add to Home Screen. In Chrome (Android): Menu → Add to Home Screen. Done — it appears like any other app.",
     guide_step_2_title: "Activate your code",
-    guide_step_2_desc: "Enter your activation code (format MISCOUT-vXX-XXXX-XXXX). MiScout will be permanently linked to your device.",
+    guide_step_2_desc: "Enter your activation code (format MISCOUT-vXX-XXXX-XXXX). <strong style=\"font-family: 'Inter', sans-serif; font-weight: 900;\"><span style=\"color: #FFFFFF;\">Mi</span><span style=\"color: #F5A623;\">Scout</span></strong> will be permanently linked to your device.",
     guide_step_3_title: "Set up the game",
     guide_step_3_desc: "Enter the teams, the event, and load the lineup. Choose your viewing perspective: catcher or pitcher.",
     guide_step_4_title: "Track in real time",
@@ -349,7 +349,7 @@ function aplicarIdioma(lang) {
   document.querySelectorAll('[data-i18n]').forEach(function (el) {
     const clave = el.getAttribute('data-i18n');
     if (clave in dict) {
-      el.textContent = dict[clave];
+      el.innerHTML = dict[clave];
     } else {
       console.warn('[MiScoutI18n] Clave no encontrada en "' + lang + '":', clave);
     }
